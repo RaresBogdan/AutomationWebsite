@@ -1,1 +1,529 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Automation & Intelligence Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+            color: var(--dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            color: white;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
+        }
+        
+        .floating-cta {
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-in, transform 0.6s ease-out;
+            transform: translateY(20px);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .sticky-nav {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .sticky-nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            color: white;
+        }
+        
+        .testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+            transition: height 0.4s ease;
+        }
+        
+        .testimonial-card:hover:before {
+            height: 100%;
+        }
+        
+        .blog-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-card:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .blog-card:hover:after {
+            transform: scaleX(1);
+        }
+        
+        .input-glow:focus {
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* Custom styles for the services page */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(168, 85, 247, 0.1) 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .service-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-description {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-features li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+        
+        .cta-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.2) 50%, transparent 100%);
+            margin: 60px 0;
+        }
+        
+        .emoji-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .emoji-title span {
+            font-size: 32px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero-section">
+            <h1 class="gradient-text">Unlock Your Business Potential with Our Automation & Intelligence Services</h1>
+            <p>Welcome to [Your Company Name]! We're here to help your business work smarter, not harder. We use the latest in automation, data analysis, and artificial intelligence (AI) to streamline your operations, uncover valuable insights, and drive real growth.</p>
+        </section>
+
+        <div class="glass-card">
+            <h2>Getting Started: Strategic Services for a Solid Future</h2>
+            <p>Before we jump into specific automations, we offer services that lay a strong groundwork for lasting success and efficiency.</p>
+            
+            <div class="service-card card-hover">
+                <h3 class="service-title">Next-Generation Workflow & Robotic Process Automation (RPA) Services</h3>
+                <p class="service-description">Let's update how your work gets done using smart automation that does more than just basic tasks.</p>
+                <ul class="service-features">
+                    <li><strong>AI-Boosted Automation Bots:</strong> We blend standard Robotic Process Automation with smart AI. This means our bots don't just follow preset rules; they can actually understand information, make judgments, and decide on the next best action.</li>
+                    <li><strong>Imagine this:</strong> Automatically checking insurance claims by using AI to read documents, understand the content, and apply business rules – all without human intervention for most cases.</li>
+                </ul>
+            </div>
+            
+            <div class="service-card card-hover">
+                <h3 class="service-title">Business Process Re-engineering: Smarter Workflows, Better Results</h3>
+                <p class="service-description">Simply automating an inefficient process isn't the best way. We help you rethink how work gets done.</p>
+                <ul class="service-features">
+                    <li><strong>Redesign, Don't Just Automate:</strong> We'll work with you to map out your current ways of working, pinpoint what's causing delays or frustration, and then redesign these processes to be leaner, faster, and automation-ready.</li>
+                    <li><strong>The Real Value:</strong> By improving the process itself, you'll see bigger gains in speed, cost savings, and quality, whether you automate it or not.</li>
+                </ul>
+            </div>
+            
+            <div class="service-card card-hover">
+                <h3 class="service-title">VBA Tools – Supercharging Your Office Software</h3>
+                <p class="service-description">Get the most out of the Microsoft Office tools you already use every day.</p>
+                <ul class="service-features">
+                    <li><strong>Custom Office Solutions:</strong> We create clever automations for Excel, Access, Outlook, and Word using VBA (a coding language built into Office). This can involve anything from automating complex spreadsheets to managing emails more efficiently, and we can even connect these tools to your other databases or online services.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="emoji-title"><span>📊</span> Data Intelligence & Analytics</h2>
+        <div class="service-card card-hover">
+            <p class="service-description">Turn messy data into clear, actionable insights that help you make better decisions.</p>
+            <h4>What Problems We Solve:</h4>
+            <ul class="service-features">
+                <li>Data that's scattered, old, or unreliable, making it hard to see the true picture.</li>
+                <li>Your team spending too much time wrestling with Excel instead of focusing on their main tasks.</li>
+                <li>A lack of clear visibility into how your business is performing on key metrics (often called KPIs).</li>
+            </ul>
+            
+            <h4>What We Can Do For You:</h4>
+            <ul class="service-features">
+                <li><strong>Automated Data Cleaning:</strong> Imagine pipelines that automatically take your jumbled business data from various sources (like your customer database, sales system, or even messy Excel files), then clean it, organize it, add missing pieces, and make it ready for use.</li>
+                <li><strong>Turning Data into a Valuable Asset (Data Productization):</strong> We can help you transform your internal data into a valuable resource, perhaps a new service for your customers or a powerful internal dashboard.</li>
+            </ul>
+            
+            <h4>Common Projects:</h4>
+            <ul class="service-features">
+                <li><strong>From Excel Chaos to Dashboard Clarity:</strong> We automate the journey from messy spreadsheets or data files to clean, organized data and live, interactive dashboards.</li>
+                <li><strong>Data Health Checks & Cleanup:</strong> We set up systems that automatically clean your data, remove duplicates, and improve its quality, whether it's in your customer management system (CRM), operations software (ERP), or spreadsheets.</li>
+                <li><strong>Sales & Operations Dashboards:</strong> Get a real-time view of your most important numbers (like orders, revenue, or customer retention) so your decision-makers always know what's happening, without needing to ask IT for reports.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="emoji-title"><span>🔄</span> Data Transformation & Integration</h2>
+        <div class="service-card card-hover">
+            <p class="service-description">Connecting your different software, systems, and teams so information flows smoothly.</p>
+            <h4>What Problems We Solve:</h4>
+            <ul class="service-features">
+                <li>Staff manually copying and pasting data between different software – which is slow and prone to errors.</li>
+                <li>Important information being stuck in separate places (like spreadsheets, emails, or older databases) and not being used effectively.</li>
+                <li>Too much time spent by people moving information around instead of doing more valuable work.</li>
+            </ul>
+            
+            <h4>Common Projects:</h4>
+            <ul class="service-features">
+                <li><strong>System Sync-Up (e.g., ERP ↔ CRM ↔ Databases):</strong> We build bridges between your key business systems (like your main operations software, customer database, and other databases) so they share information automatically. No more out-of-sync records or manual data entry!</li>
+                <li><strong>Data Pipelines for Growing Businesses:</strong> We help automate how data is gathered, reshaped, and moved between your apps (for instance, getting sales data from your e-commerce store like WooCommerce into a central database and then into your analysis tools). This is often called ETL (Extract, Transform, Load).</li>
+                <li><strong>Real-Time Reporting Pathways:</strong> We smooth out the process of getting information from where it's entered (like forms, online services, or documents) to where it's needed (like dashboards, reports, or alerts), giving you faster access to fresh data.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="emoji-title"><span>🤖</span> AI-Powered Document Processing (IDP)</h2>
+        <div class="service-card card-hover">
+            <p class="service-description">Automate how you handle paperwork and digital documents using smart AI.</p>
+            <h4>What Problems We Solve:</h4>
+            <ul class="service-features">
+                <li>Manually processing invoices, contracts, or other documents, which is slow and costly.</li>
+                <li>Time-consuming data entry from PDFs, scanned images, or paper files.</li>
+                <li>The risk of human errors in document handling leading to compliance issues or mistakes.</li>
+            </ul>
+            
+            <h4>What We Do:</h4>
+            <p>We use AI to automatically read, understand, and extract important information (like names, dates, amounts, or specific clauses) from your documents (like invoices, contracts, or forms) and then feed this information directly into your other business systems.</p>
+            
+            <h4>Common Projects:</h4>
+            <ul class="service-features">
+                <li><strong>Automated Invoice Processing:</strong> Imagine incoming emailed invoices having key details like vendor name, due dates, and amounts automatically read and entered into your accounting software.</li>
+                <li><strong>Smart Contract Analysis:</strong> Automatically find and pull out critical information (like renewal dates or specific legal clauses) from your contracts and legal documents.</li>
+                <li><strong>Handling Digital & Scanned Forms (e.g., Medical, HR):</strong> Efficiently process patient intake forms, employee leave requests, and other types of forms, even including steps to check if the information is correct.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="emoji-title"><span>🧠</span> Artificial Intelligence (AI) Solutions</h2>
+        <div class="service-card card-hover">
+            <p class="service-description">Go beyond simple automation with systems that can learn, reason, and adapt to new situations.</p>
+            <h4>What Problems We Solve:</h4>
+            <ul class="service-features">
+                <li>Tasks that slow things down because they currently need a human to make a judgment call or figure out where things go next.</li>
+                <li>Dealing with large amounts of "unstructured" information (like text in emails, images, or customer feedback) that's hard to use.</li>
+                <li>Teams feeling overloaded by having to make too many small decisions throughout the day.</li>
+            </ul>
+            
+            <h4>What We Can Build For You:</h4>
+            <ul class="service-features">
+                <li><strong>On-Premise AI Assistants for Small & Medium Businesses:</strong> We can create smart AI assistants (using advanced AI language programs, or LLMs) that run on your own private servers or secure cloud setup. These are trained specifically on your company's data and documents.</li>
+                <li><strong>"Ask Your Data" AI Portals:</strong> We can build internal chat-style websites where your team can ask questions about your business data in plain English.</li>
+                <li><strong>Autonomous AI Agents:</strong> These are custom-built AI programs designed to "think" and act across different software applications on their own.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="emoji-title"><span>📨</span> Smart Communication Automation</h2>
+        <div class="service-card card-hover">
+            <p class="service-description">Let AI help manage your emails, customer follow-ups, and other communications.</p>
+            <h4>What Problems We Solve:</h4>
+            <ul class="service-features">
+                <li>Inboxes so full that important messages get missed.</li>
+                <li>Slow responses to customer questions or sales leads, which can hurt your reputation or lose business.</li>
+                <li>Too much time spent by staff manually handling emails and documents.</li>
+            </ul>
+            
+            <h4>What We Can Do For You:</h4>
+            <ul class="service-features">
+                <li><strong>Smart Email Assistants (Interceptors):</strong> We can set up AI tools that act like a super-smart filter for your email inboxes.</li>
+                <li><strong>Automated Replies & Document Filing:</strong> Handle frequently asked questions automatically, file attachments where they belong, and only involve your team when human expertise is truly needed.</li>
+                <li><strong>Lead Qualification Bots:</strong> Have AI read incoming emails or web forms from potential customers, score how promising they are, sort them, and instantly let your sales team know.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="emoji-title"><span>📦</span> E-Commerce Automation</h2>
+        <div class="service-card card-hover">
+            <p class="service-description">Grow your online sales business more efficiently, without needing a much larger team.</p>
+            <h4>What Problems We Solve:</h4>
+            <ul class="service-features">
+                <li>Manually updating product information and stock levels across different online stores or marketplaces – which is slow and error-prone.</li>
+                <li>Being slow to react to competitor price changes or missing opportunities because you're not watching the market closely enough.</li>
+                <li>Having disconnected marketing efforts or inefficient ways of handling orders.</li>
+            </ul>
+            
+            <h4>What We Do:</h4>
+            <p>We automate tasks like keeping your product listings up-to-date, tracking competitor prices, monitoring what your rivals are doing, syncing orders between systems, and managing your inventory.</p>
+            
+            <h4>Common Projects:</h4>
+            <ul class="service-features">
+                <li><strong>Automated Product Information Updates:</strong> Automatically pull product details (like prices and stock levels) from your main system, clean it up, and send it to your Shopify store, WooCommerce site, Amazon listings, etc., ensuring everything is always accurate.</li>
+                <li><strong>Competitor Monitoring Bots:</strong> We can set up AI tools that keep an eye on your competitors' pricing and promotions, suggesting price adjustments for your products or alerting you when they make a significant move.</li>
+                <li><strong>Streamlined Order-to-Delivery Process:</strong> Automate the steps from when an order comes in to when it's delivered – like creating invoices, printing shipping labels, sending tracking updates to customers, and keeping order statuses synced across your systems, often without anyone needing to touch it.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="emoji-title"><span>🧩</span> AI-Driven Content & Social Media Automation</h2>
+        <div class="service-card card-hover">
+            <p class="service-description">Streamline your entire content process – from coming up with ideas to creating and sharing it with your audience. This is where AI boosts your creativity and reach.</p>
+            <h4>What Problems We Solve:</h4>
+            <ul class="service-features">
+                <li>Marketing teams feeling stretched trying to create enough fresh and interesting content.</li>
+                <li>Spending too much time on repetitive tasks like scheduling social media posts.</li>
+                <li>Sending out generic marketing messages that don't get much attention.</li>
+            </ul>
+            
+            <h4>What We Can Do For You:</h4>
+            <ul class="service-features">
+                <li><strong>Postări Automatizate (Automated Social Posts in Romanian, or generally Automated Social Posts):</strong> We can help you automatically create, schedule, and publish content to your social media channels, matching your brand's style.</li>
+                <li><strong>Super-Personalized Content & Outreach:</strong> Use AI to create unique content for different customer groups – or even individual customers – based on what you know about them from your CRM or their past behavior. This makes your marketing much more effective.</li>
+                <li><strong>Multilingual Marketing Bots:</strong> Need to reach customers in different countries? We can help you translate and adapt your posts and campaigns for international audiences, ensuring they make sense culturally and linguistically.</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to See How Automation and AI Can Transform Your Business?</h2>
+            <p>Let's talk about your specific challenges and goals. Contact us today for a friendly chat and a no-obligation consultation!</p>
+            <a href="#" class="cta-button">Get Started Now</a>
+        </div>
+    </div>
+
+    <script>
+        // Simple script to add fade-in animations as user scrolls
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Run once on load
+            fadeInOnScroll();
+            
+            // Run on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Sticky nav effect
+            const nav
+</html>
