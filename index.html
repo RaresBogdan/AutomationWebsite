@@ -187,6 +187,26 @@
     border-style: solid;
     border-color: transparent transparent white transparent;
 }
+
+        footer a {
+    position: relative;
+}
+
+footer a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+footer a:hover:after {
+    width: 100%;
+    left: 0;
+}
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
