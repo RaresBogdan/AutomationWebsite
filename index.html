@@ -177,15 +177,22 @@
         .input-glow:focus {
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
         }
-        /* Dropdown Styles */
+     /* Update dropdown styles */
 .dropdown-menu {
     z-index: 1000;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
 }
 
-.group:hover .dropdown-menu {
-    pointer-events: auto;
+.group:hover .dropdown-menu,
+.dropdown-menu:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto; /* Enable interactions when visible */
+    transition-delay: 0s;
 }
 
 .dropdown-menu:before {
