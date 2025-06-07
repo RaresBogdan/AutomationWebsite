@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutomateIQ | Automatizare de Ultimă Generație pentru Afaceri</title>
+    <title>AutomateIQ | Automatizări Avansate pentru Afaceri</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+       
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -16,13 +16,13 @@
             --dark: #0f172a;
             --light: #f8fafc;
         }
-        
+       
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             background-color: #f8fafc;
         }
-        
+       
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -39,74 +39,74 @@
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
     color: white;
 }
-        
+       
         .gradient-text {
             background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        
+       
         .gradient-bg {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
         }
-        
+       
         .card-hover {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        
+       
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
         }
-        
+       
         .floating-cta {
             animation: float 6s ease-in-out infinite;
             box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
         }
-        
+       
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-12px); }
             100% { transform: translateY(0px); }
         }
-        
+       
         .scroll-down {
             animation: bounce 2s infinite;
         }
-        
+       
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
             40% {transform: translateY(-20px);}
             60% {transform: translateY(-10px);}
         }
-        
+       
         .fade-in {
             opacity: 0;
             transition: opacity 0.6s ease-in, transform 0.6s ease-out;
             transform: translateY(20px);
         }
-        
+       
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+       
         .sticky-nav {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-        
+       
         .sticky-nav.scrolled {
             background-color: rgba(255, 255, 255, 0.98);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
             border-bottom: 1px solid rgba(241, 245, 249, 0.8);
         }
-        
+       
         .nav-link {
             position: relative;
         }
-        
+       
         .nav-link:after {
             content: '';
             position: absolute;
@@ -117,26 +117,26 @@
             background-color: var(--primary);
             transition: width 0.3s ease;
         }
-        
+       
         .nav-link:hover:after {
             width: 100%;
         }
-        
+       
         .feature-icon {
             transition: all 0.3s ease;
         }
-        
+       
         .feature-card:hover .feature-icon {
             transform: scale(1.1);
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
             color: white;
         }
-        
+       
         .testimonial-card {
             position: relative;
             overflow: hidden;
         }
-        
+       
         .testimonial-card:before {
             content: '';
             position: absolute;
@@ -147,16 +147,16 @@
             background: linear-gradient(to bottom, #6366f1, #8b5cf6);
             transition: height 0.4s ease;
         }
-        
+       
         .testimonial-card:hover:before {
             height: 100%;
         }
-        
+       
         .blog-card {
             position: relative;
             overflow: hidden;
         }
-        
+       
         .blog-card:after {
             content: '';
             position: absolute;
@@ -169,15 +169,15 @@
             transform-origin: left;
             transition: transform 0.4s ease;
         }
-        
+       
         .blog-card:hover:after {
             transform: scaleX(1);
         }
-        
+       
         .input-glow:focus {
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
         }
-     /* Update dropdown styles */
+   /* Update dropdown styles */
 .dropdown-menu {
     z-index: 1000;
     opacity: 0;
@@ -227,23 +227,24 @@ footer a:hover:after {
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
-    <!-- Buton Flotant CTA -->
     <div class="fixed bottom-8 right-8 z-50">
         <button id="floatingCTA" class="floating-cta bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center font-medium">
-            <i class="fas fa-comment-dots mr-2"></i> Programează un Apel
+            <i class="fas fa-comment-dots mr-2"></i> Programează o discuție
         </button>
     </div>
 
-    <!-- Navigație Fixă -->
     <nav id="navbar" class="sticky-nav fixed top-0 w-full z-40 bg-white/80 py-4 px-6 lg:px-16 border-b border-slate-100">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
                 <span class="text-xl font-bold text-slate-900">AutomateIQ</span>
             </div>
-            
+                        <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
+                <a href="index.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">EN</a>
+                <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">RO</span>
+            </div>
+           
             <div class="hidden md:flex space-x-8">
-            <!-- Meniu Dropdown Soluții Îmbunătățit -->
             <div class="group relative">
                 <a href="#services" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
                     Soluții
@@ -253,23 +254,23 @@ footer a:hover:after {
                     <div class="py-1.5">
                         <a href="solutions/services.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-project-diagram mr-2 text-indigo-500 w-4 text-center"></i>
-                            Transformare Strategică a Proceselor
+                            Transformare Strategică
                         </a>
                         <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-cogs mr-2 text-indigo-500 w-4 text-center"></i>
-                            Automatizare de Procese
+                            Automatizarea Proceselor
                         </a>
                         <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-file-alt mr-2 text-indigo-500 w-4 text-center"></i>
-                            Procesare Inteligentă de Documente
+                            Procesare Documente
                         </a>
                         <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-chart-line mr-2 text-indigo-500 w-4 text-center"></i>
-                            Inteligență și Analiză de Date
+                            Analiza Datelor
                         </a>
                         <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-link mr-2 text-indigo-500 w-4 text-center"></i>
-                            Unificare Date și Sisteme
+                            Date și Sisteme Unificate
                         </a>
                         <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-shopping-cart mr-2 text-indigo-500 w-4 text-center"></i>
@@ -277,7 +278,7 @@ footer a:hover:after {
                         </a>
                         <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-pen-fancy mr-2 text-indigo-500 w-4 text-center"></i>
-                            Scalare Conținut cu AI
+                            Scalează Conținutul cu AI
                         </a>
                         <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                             <i class="fas fa-brain mr-2 text-indigo-500 w-4 text-center"></i>
@@ -286,80 +287,79 @@ footer a:hover:after {
                     </div>
                 </div>
             </div>
-                <div class="group relative">
-    <a href="#industries" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
-        Industrii
-        <i class="fas fa-chevron-down ml-2 text-xs opacity-80 transition-transform group-hover:rotate-180"></i>
-    </a>
-    <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-1 group-hover:translate-y-0 border border-slate-100 overflow-hidden">
-        <div class="py-1.5">
-            <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                <i class="fas fa-calculator mr-2 text-indigo-500 w-4 text-center"></i>
-                Contabilitate & Finanțe
-            </a>
-            <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                <i class="fas fa-shopping-bag mr-2 text-indigo-500 w-4 text-center"></i>
-                E-commerce & Retail
-            </a>
-            <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                <i class="fas fa-truck mr-2 text-indigo-500 w-4 text-center"></i>
-                Logistică & Lanț de Aprovizionare
-            </a>
-            <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                <i class="fas fa-gavel mr-2 text-indigo-500 w-4 text-center"></i>
-                Legal & Conformitate
-            </a>
-            <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                <i class="fas fa-heartbeat mr-2 text-indigo-500 w-4 text-center"></i>
-                Sănătate
-            </a>
-            <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                <i class="fas fa-home mr-2 text-indigo-500 w-4 text-center"></i>
-                Imobiliare
-            </a>
-        </div>
-    </div>
-</div>
-                <a href="#blog" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Blog</a>
-                <a href="#about" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Despre Noi</a>
-                <a href="#careers" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Cariere</a>
+            <div class="group relative">
+                <a href="#industries" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
+                    Industrii
+                    <i class="fas fa-chevron-down ml-2 text-xs opacity-80 transition-transform group-hover:rotate-180"></i>
+                </a>
+                <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-1 group-hover:translate-y-0 border border-slate-100 overflow-hidden">
+                    <div class="py-1.5">
+                        <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                            <i class="fas fa-calculator mr-2 text-indigo-500 w-4 text-center"></i>
+                            Contabilitate & Finanțe
+                        </a>
+                        <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                            <i class="fas fa-shopping-bag mr-2 text-indigo-500 w-4 text-center"></i>
+                            E-commerce & Retail
+                        </a>
+                        <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                            <i class="fas fa-truck mr-2 text-indigo-500 w-4 text-center"></i>
+                            Logistică și Aprovizionare
+                        </a>
+                        <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                            <i class="fas fa-gavel mr-2 text-indigo-500 w-4 text-center"></i>
+                            Juridic & Conformitate
+                        </a>
+                        <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                            <i class="fas fa-heartbeat mr-2 text-indigo-500 w-4 text-center"></i>
+                            Sănătate
+                        </a>
+                        <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                            <i class="fas fa-home mr-2 text-indigo-500 w-4 text-center"></i>
+                            Imobiliare
+                        </a>
+                    </div>
+                </div>
             </div>
-            
+                <a href="#blog" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Blog</a>
+                <a href="#about" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Despre noi</a>
+                <a href="#careers" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Cariere</a>
+                
+            </div>
+           
             <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
-                <span class="relative z-10">Consultare Gratuită</span>
+                <span class="relative z-10">Consultanță Gratuită</span>
                 <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </button>
-            
+           
             <button id="mobileMenuButton" class="md:hidden text-slate-600">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-        
-        <!-- Meniu Mobil -->
+       
         <div id="mobileMenu" class="hidden md:hidden bg-white absolute top-full left-0 right-0 shadow-lg py-4 px-6">
             <a href="services.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Soluții</a>
             <a href="industries.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Industrii</a>
             <a href="#blog" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Blog</a>
-            <a href="#about" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Despre Noi</a>
+            <a href="#about" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Despre noi</a>
             <a href="#careers" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Cariere</a>
             <button class="mt-4 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3 rounded-lg transition shadow hover:shadow-md font-medium">
-                Consultare Gratuită
+                Consultanță Gratuită
             </button>
         </div>
     </nav>
 
-    <!-- Secțiune Hero -->
     <section class="pt-32 pb-24 px-6 lg:px-16 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="relative">
                 <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-indigo-100/50 blur-3xl"></div>
                 <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-purple-100/50 blur-3xl"></div>
-                
+               
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6 relative z-10">
-                    <span class="gradient-text">Transformă</span> Afacerea Ta cu Automatizarea Inteligentă
+                    <span class="gradient-text">Transformă-ți</span> Afacerea cu Automatizare Inteligentă
                 </h1>
                 <p class="text-xl text-slate-600 mb-8 relative z-10">
-                    Soluții alimentate de AI care elimină munca repetitivă, reduc erorile și deblochează potențialul echipei tale.
+                    Soluții bazate pe AI care elimină munca repetitivă, reduc erorile și deblochează potențialul echipei tale.
                 </p>
                 <div class="flex flex-wrap gap-4 relative z-10">
                     <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
@@ -370,7 +370,7 @@ footer a:hover:after {
                         <i class="fas fa-play-circle mr-2 text-indigo-600"></i> Vezi Demo
                     </button>
                 </div>
-                
+               
                 <div class="mt-12 flex items-center space-x-6">
                     <div class="flex -space-x-2">
                         <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Client">
@@ -378,12 +378,12 @@ footer a:hover:after {
                         <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
                     </div>
                     <div class="text-sm text-slate-600">
-                        <div class="font-medium">Folosit de peste 500+ companii inovatoare</div>
+                        <div class="font-medium">Peste 500 de companii inovatoare au încredere în noi</div>
                         <div class="flex items-center mt-1">
                             <i class="fas fa-star text-yellow-400 mr-1"></i>
                             <span class="font-medium">4.9</span>
                             <span class="mx-1">•</span>
-                            <span>200+ recenzii</span>
+                            <span>Peste 200 de recenzii</span>
                         </div>
                     </div>
                 </div>
@@ -394,7 +394,693 @@ footer a:hover:after {
                 </div>
                 <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-purple-500/10 blur-xl"></div>
                 <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-indigo-500/10 blur-xl"></div>
-                
+               
                 <div class="glass-card absolute -bottom-4 -left-4 z-20 p-4 rounded-xl shadow-lg">
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <div class="font-bold text-sm text-slate-800">Asistent AI</div>
+                            <div class="text-xs text-slate-500">Procesare solicitare</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-16 text-center">
+            <a href="#services" class="scroll-down inline-flex flex-col items-center text-indigo-600 hover:text-indigo-800">
+                <span class="text-sm font-medium mb-1">Explorează Mai Mult</span>
+                <i class="fas fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">CINE BENEFICIAZĂ</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Sună Cunoscut? Hai să Rezolvăm.</h2>
+            <p class="text-lg text-slate-600">
+                Dacă aceste provocări îți definesc ziua, soluțiile noastre sunt proiectate pentru a schimba asta.
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-6 feature-icon">
+                    <i class="fas fa-tasks text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Copleșit de Sarcini Repetitive?</h3>
+                <p class="text-slate-600">
+                    Eliberează-ți echipa talentată de munca manuală. Automatizarea noastră inteligentă le permite să se concentreze pe inovație și pe rezultate cu impact ridicat.
+                </p>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6 feature-icon">
+                    <i class="fas fa-clock text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Operațiunile Îți Acaparează Timpul Strategic?</h3>
+                <p class="text-slate-600">
+                    Renunță la "incendiile" operaționale zilnice și recâștigă-ți timpul pentru strategie. Automatizarea noastră inteligentă eficientizează procesele, permițându-ți să stimulezi creșterea și să conduci eficient.
+                </p>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6 feature-icon">
+                    <i class="fas fa-chart-bar text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Prea Multe Date, Prea Puține Informații Utile?</h3>
+                <p class="text-slate-600">
+                    Transformă haosul datelor în claritate decizională. Livrăm informații precise și acționabile din datele tale complexe, susținând decizii sigure și creșterea afacerii.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 px-6 lg:px-16 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">SOLUȚIILE NOASTRE</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Avantajul Tău, Livrat.</h2>
+            <p class="text-lg text-slate-600">
+                Automatizare Inteligentă și AI Personalizat, Proiectate pentru a Te Propulsa.
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mb-4 feature-icon">
+                    <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Automatizare de Proces la Nivel Superior</h3>
+                <p class="text-slate-600 text-sm">
+                    Eficientizează-ți operațiunile. Automatizăm inteligent fluxurile de lucru esențiale, de la sarcini zilnice la procese complexe, reducând semnificativ ineficiențele și permițând echipei tale să realizeze mai mult.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Află mai multe <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mb-4 feature-icon">
+                    <i class="fas fa-file-invoice-dollar text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Operațiuni E-commerce, Automatizate</h3>
+                <p class="text-slate-600 text-sm">
+                    Optimizează-ți performanța e-commerce. Automatizăm operațiuni cheie — inventar, prețuri dinamice, procesarea comenzilor — pentru a te ajuta să scalezi eficient, să crești satisfacția clienților și să-ți consolidezi poziția pe piață.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Află mai multe <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mb-4 feature-icon">
+                    <i class="fas fa-newspaper text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Scalează-ți Conținutul cu AI</h3>
+                <p class="text-slate-600 text-sm">
+                    Extinde impactul conținutului tău cu AI. Te ajutăm să planifici, creezi și distribui inteligent conținut relevant și captivant pe platformele tale, crescând eficient audiența și conexiunea cu publicul.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Află mai multe <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mb-4 feature-icon">
+                    <i class="fas fa-database text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Descoperă Informații Utile din Datele Tale</h3>
+                <p class="text-slate-600 text-sm">
+                    Curăță, standardizează și pregătește automat datele pentru analiză și raportare. Transformă datele afacerii tale în informații clare și acționabile care stimulează creșterea, îmbunătățesc operațiunile și fundamentează decizii mai bune.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Află mai multe <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mb-4 feature-icon">
+                    <i class="fas fa-brain text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Date și Sisteme Unificate</h3>
+                <p class="text-slate-600 text-sm">
+                    Creează un flux operațional fluid. Integrăm sistemele cheie ale afacerii tale și eliminăm silozurile de date, creând un mediu unificat pentru eficiență sporită și informații mai clare.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Află mai multe <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mb-4 feature-icon">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Soluții AI Personalizate</h3>
+                <p class="text-slate-600 text-sm">
+                    Obține soluții AI inteligente create special pentru nevoile unice ale afacerii tale – de la asistenți de date privați la instrumente specializate pentru rezolvarea problemelor.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Află mai multe <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-12 text-center">
+            <a href="services.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                Explorează Toate Soluțiile <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="industries" class="py-20 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">INDUSTRII</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Adaptate pentru Industria Ta</h2>
+            <p class="text-lg text-slate-600">
+                Soluții de automatizare specifice sectorului, create pentru provocările tale unice
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl border border-indigo-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                        <i class="fas fa-coins text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Finanțe & Contabilitate</h3>
+                        <p class="text-slate-600 text-sm">
+                            Crește acuratețea și eficiența prin automatizarea proceselor financiare critice: de la facturi și reconcilieri la conformitate și raportare.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">E-commerce</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automatizează listările de produse, prețurile dinamice, managementul stocurilor și fluxurile cheie de interacțiune cu clienții.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                        <i class="fas fa-heartbeat text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Sănătate</h3>
+                        <p class="text-slate-600 text-sm">
+                            Digitalizează formularele pacienților, automatizează comunicările esențiale și eficientizează fluxurile administrative, în mod securizat și eficient.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mr-4">
+                        <i class="fas fa-home text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Imobiliare</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automatizează administrarea contractelor de închiriere, eficientizează fluxurile de date critice ale proprietăților și îmbunătățește comunicarea cu chiriașii.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-xl border border-yellow-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">HR & Recrutare</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automatizează sortarea CV-urilor, simplifică procesul de integrare a noilor angajați și gestionează eficient solicitările HR și procesele administrative de bază.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-red-50 to-white p-6 rounded-xl border border-red-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mr-4">
+                        <i class="fas fa-bullhorn text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Agenții de Marketing</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automatizează raportarea către clienți, folosește crearea de conținut asistată de AI și eficientizează managementul campaniilor pentru un impact mai mare.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-12 text-center">
+            <a href="industries.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                Vezi Toate Industriile <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 lg:px-16 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">PROCESUL NOSTRU</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Proces Simplu și Transparent</h2>
+            <p class="text-lg text-slate-600">
+                De la descoperire la implementare, facem automatizarea accesibilă
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto">
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -translate-y-1/2"></div>
+                <div class="hidden md:block absolute top-1/2 left-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 -translate-y-1/2 progress-line" style="width: 0%"></div>
+               
+                <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Descoperire</h3>
+                        <p class="text-slate-600 text-sm">
+                            Analizăm procesele tale pentru a identifica oportunități de automatizare.
+                        </p>
+                    </div>
+                   
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Prototip</h3>
+                        <p class="text-slate-600 text-sm">
+                            Construim o versiune testabilă pentru a valida abordarea soluției.
+                        </p>
+                    </div>
+                   
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Livrare</h3>
+                        <p class="text-slate-600 text-sm">
+                            Implementăm soluția și instruim echipa ta cu privire la utilizare.
+                        </p>
+                    </div>
+                   
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">4</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Optimizare</h3>
+                        <p class="text-slate-600 text-sm">
+                            Monitorizăm performanța și aducem îmbunătățiri continue.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-16 text-center">
+            <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-medium">
+                <span class="relative z-10">Începe Călătoria Ta în Automatizare</span>
+                <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">REZULTATE</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Impact Dovedit</h2>
+            <p class="text-lg text-slate-600">
+                Rezultatele măsurabile pe care le-am livrat pentru afaceri ca a ta
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+                <div class="text-5xl font-bold text-indigo-600 mb-4">90%</div>
+                <p class="text-slate-600 mb-6">
+                    "Am redus timpul de procesare a facturilor cu 90%, economisind 25 de ore pe săptămână pentru echipa noastră de contabilitate."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="font-medium">Sarah K.</div>
+                        <div class="text-sm text-slate-500">Director Financiar, Companie de Producție</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+                <div class="text-5xl font-bold text-purple-600 mb-4">40h</div>
+                <p class="text-slate-600 mb-6">
+                    "Am recuperat 40 de ore/lună din munca administrativă, permițând agenților noștri să se concentreze pe clienți."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="font-medium">Mihai T.</div>
+                        <div class="text-sm text-slate-500">Broker, Firmă Imobiliară</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+                <div class="text-5xl font-bold text-blue-600 mb-4">3 zile</div>
+                <p class="text-slate-600 mb-6">
+                    "Am implementat un agent AI personalizat în 3 zile, care acum gestionează 80% din solicitările clienților."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="font-medium">Jessica L.</div>
+                        <div class="text-sm text-slate-500">Director Operațional, Afacere E-commerce</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-20 px-6 lg:px-16 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">PERSPECTIVE</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Perspective despre Automatizare</h2>
+            <p class="text-lg text-slate-600">
+                Ultimele tendințe, strategii și studii de caz în automatizarea afacerilor
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
+                <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center text-white">
+                    <i class="fas fa-robot text-6xl opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-semibold text-indigo-600 mb-2">AUTOMATIZARE</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">5 Procese de Automatizat cu Prioritate</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Descoperă ce procese de afaceri oferă cel mai rapid randament al investiției atunci când sunt automatizate.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
+                        Citește Articolul <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+           
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
+                <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+                    <i class="fas fa-brain text-6xl opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-semibold text-blue-600 mb-2">TENDINȚE AI</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Strategii AI pentru Afaceri Mici</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Soluții AI accesibile care pot transforma operațiunile fără a necesita bugete de nivel enterprise.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
+                        Citește Articolul <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+           
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
+                <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center text-white">
+                    <i class="fas fa-database text-6xl opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-semibold text-purple-600 mb-2">TRANSFORMAREA DATELOR</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">De la Date la Decizii</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Pași practici pentru a curăța, organiza și extrage informații valoroase din datele afacerii tale.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
+                        Citește Articolul <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-12 text-center">
+            <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                Vezi Toate Articolele <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 md:p-12">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Perspective despre Automatizare</h3>
+                    <p class="text-slate-600">
+                        Primește cele mai noi tendințe și sfaturi despre AI și automatizarea afacerilor.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="flex">
+                        <input type="email" placeholder="Emailul tău" class="flex-grow px-4 py-3 rounded-l-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 input-glow">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-r-lg transition font-medium">
+                            Abonare
+                        </button>
+                    </form>
+                    <p class="text-xs text-slate-500 mt-2">Respectăm confidențialitatea ta. Te poți dezabona oricând.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 lg:px-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto text-center relative">
+            <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-white/10 blur-2xl"></div>
+            <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-purple-500/20 blur-2xl"></div>
+           
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ești Gata să Îți Transformi Afacerea?</h2>
+            <p class="text-xl mb-8 opacity-90 relative z-10">
+                Programează o consultanță gratuită pentru a descoperi cum automatizarea poate economisi timp și reduce erorile pentru echipa ta.
+            </p>
+            <button class="relative overflow-hidden group bg-white text-indigo-600 hover:bg-gray-100 px-8 py-4 rounded-lg transition shadow-lg hover:shadow-xl font-medium text-lg z-10">
+                <span class="relative z-10">Rezervă o Consultanță Gratuită</span>
+                <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300 py-16 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
+                        <span class="text-xl font-bold text-white">AutomateIQ</span>
+                    </div>
+                    <p class="mb-6 text-slate-400">
+                        Soluții de automatizare bazate pe AI care ajută afacerile să lucreze mai inteligent, nu mai mult.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+               
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Soluții</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Automatizarea Fluxurilor</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">AI pentru Documente</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Transformarea Datelor</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Asistenți AI</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Soluții Personalizate</a></li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Companie</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Despre Noi</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Cariere</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Studii de Caz</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Contact</a></li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Resurse</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Documentație</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Referință API</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Comunitate</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Stare Servicii</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Suport</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400">© 2023 AutomateIQ. Toate drepturile rezervate.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white mr-6">Politică de Confidențialitate</a>
+                    <a href="#" class="text-slate-400 hover:text-white">Termeni și Condiții</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+       
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+       
+        // Sticky navbar on scroll
+        const navbar = document.getElementById('navbar');
+       
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+       
+        // Floating CTA button click
+        const floatingCTA = document.getElementById('floatingCTA');
+       
+        floatingCTA.addEventListener('click', () => {
+            // Scroll to contact section or open modal
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+       
+        // Scroll animation for sections
+        const fadeElements = document.querySelectorAll('.fade-in');
+       
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+               
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+           
+            // Animate process steps line
+            const processSection = document.querySelector('.bg-gradient-to-b.from-slate-50.to-white');
+            if (processSection) {
+                const processSectionTop = processSection.getBoundingClientRect().top;
+                const processSectionHeight = processSection.offsetHeight;
+                const windowHeight = window.innerHeight;
+               
+                if (processSectionTop < windowHeight && processSectionTop + processSectionHeight > 0) {
+                    const scrollPercent = Math.max(0, Math.min(1, (windowHeight - processSectionTop) / (windowHeight + processSectionHeight)));
+                    document.querySelector('.progress-line').style.width = `${scrollPercent * 100}%`;
+                   
+                    // Highlight steps based on scroll position
+                    const steps = document.querySelectorAll('.step-icon');
+                    steps.forEach((step, index) => {
+                        if (scrollPercent > index * 0.25) {
+                            step.style.borderColor = '#6366f1';
+                            step.style.color = '#6366f1';
+                            step.style.boxShadow = '0 4px 6px -1px rgba(99, 102, 241, 0.2)';
+                        } else {
+                            step.style.borderColor = '#e2e8f0';
+                            step.style.color = '#6366f1';
+                            step.style.boxShadow = 'none';
+                        }
+                    });
+                }
+            }
+        };
+       
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+       
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+               
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+               
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                   
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+       
+        // Add this to the existing <script> tag
+// Dropdown hover handling
+document.querySelectorAll('.group').forEach(item => {
+    item.addEventListener('mouseleave', () => {
+        item.querySelector('.dropdown-menu').classList.remove('opacity-100', 'visible', 'translate-y-0');
+    });
+});
+       
+        // Add hover effect to feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.feature-icon');
+                icon.style.transform = 'scale(1.1)';
+                icon.style.background = 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%)';
+                icon.style.color = 'white';
+            });
+           
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.feature-icon');
+                icon.style.transform = '';
+                icon.style.background = '';
+                icon.style.color = '';
+            });
+        });
+    </script>
+</body>
+</html>
