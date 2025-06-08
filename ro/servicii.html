@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluțiile Noastre | Automatizări Avansate pentru Afaceri</title>
+    <title>Cei 8 Piloni ai Transformării | AutomateIQ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --dark: #1e293b;
-            --light: #f8fafc;
+            --primary: #2563eb; --primary-dark: #1d4ed8; --secondary: #7c3aed; --dark: #1e293b; --light: #f8fafc;
         }
         body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.6; }
         .hero-gradient { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); }
@@ -21,6 +17,12 @@
         .solution-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .solution-icon { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 20px; margin-bottom: 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
         .solution-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-content.open { max-height: 1000px; transition: max-height 0.5s ease-in; }
+        .accordion-toggle { transition: all 0.3s ease; }
+        .accordion-toggle.open { transform: rotate(180deg); }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: var(--primary); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
         .gradient-bg { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%); }
     </style>
 </head>
@@ -29,20 +31,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="index-ro.html" class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex-shrink-0 flex items-center">
                         <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
                         <span class="text-xl font-bold text-gray-900">AutomateIQ</span>
                     </a>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="index-ro.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Acasă</a>
-                        <a href="#" class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Soluții</a>
-                        <a href="industrii.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Industrii</a>
-                        <a href="index-ro.html#blog" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Blog</a>
+                        <a href="../index.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Acasă</a>
+                        <a href="#" class="nav-link border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Soluții</a>
+                        <a href="../industries.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Industrii</a>
+                        <a href="../index.html#about" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Despre</a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
-                    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
-                        <a href="../solutions/services.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">EN</a>
+                     <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
+                        <a href="services.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">EN</a>
                         <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">RO</span>
                     </div>
                     <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
@@ -50,7 +52,8 @@
                     </button>
                 </div>
                 <div class="-mr-2 flex items-center sm:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" id="mobile-menu-button">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Deschide meniul principal</span>
                         <i class="fas fa-bars block h-6 w-6"></i>
                         <i class="fas fa-times hidden h-6 w-6"></i>
                     </button>
@@ -60,19 +63,21 @@
         
         <div class="hidden sm:hidden" id="mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="index-ro.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Acasă</a>
+                <a href="../index.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Acasă</a>
                 <a href="#" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Soluții</a>
-                <a href="industrii.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Industrii</a>
-                <a href="index-ro.html#blog" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Blog</a>
+                <a href="../industries.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Industrii</a>
+                <a href="../index.html#about" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Despre</a>
             </div>
-            <div class="pt-4 pb-3 border-t border-gray-200 px-4 space-y-4">
-                <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
-                    <a href="../solutions/services.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">EN</a>
-                    <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">RO</span>
+             <div class="pt-4 pb-3 border-t border-gray-200">
+                <div class="px-4">
+                    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min mb-3">
+                        <a href="services.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">EN</a>
+                        <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">RO</span>
+                    </div>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">
+                        Începe Acum
+                    </button>
                 </div>
-                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition">
-                    Începe Acum
-                </button>
             </div>
         </div>
     </nav>
@@ -81,35 +86,36 @@
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
-                    Soluțiile Noastre: Proiectate pentru Succesul Tău
+                    Soluțiile Noastre: Proiectate pentru Succesul Dvs.
                 </h1>
                 <p class="mt-6 max-w-2xl mx-auto text-xl">
-                    În peisajul de afaceri dinamic de astăzi, utilizarea tehnologiei potrivite nu este doar un avantaj—este fundamentală pentru creșterea și competitivitatea dumneavoastră.
+                    În peisajul de afaceri dinamic de astăzi, utilizarea tehnologiei potrivite nu este doar un avantaj—este fundamentală pentru creșterea și avantajul dvs. competitiv.
                 </p>
                 <div class="mt-10">
-                    <a href="#solutii" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-gray-50 transition">
-                        Explorează Soluțiile <i class="fas fa-arrow-down ml-2"></i>
+                    <a href="#solutions" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-gray-50 transition duration-150 ease-in-out">
+                        Explorați Soluțiile <i class="fas fa-arrow-down ml-2"></i>
                     </a>
-                    <a href="#" class="ml-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 bg-opacity-60 hover:bg-opacity-70 transition">
-                        Programează o Consultanță <i class="fas fa-calendar-alt ml-2"></i>
+                    <a href="#" class="ml-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 bg-opacity-60 hover:bg-opacity-70 transition duration-150 ease-in-out">
+                        Programați o Consultanță <i class="fas fa-calendar-alt ml-2"></i>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="solutii" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div id="solutions" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">
-                Explorează Soluțiile Noastre de Bază
+                Explorați Soluțiile Noastre de Bază
             </h2>
+            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="solution-card p-10">
                     <div class="flex items-start">
                         <div class="solution-icon bg-blue-100 text-blue-600"><i class="fas fa-project-diagram text-3xl"></i></div>
                         <div class="ml-6 flex-1">
                             <h3 class="text-3xl font-bold text-gray-900 mb-4">Transformare Strategică a Proceselor</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Reimaginați-vă operațiunile pentru performanță maximă prin analiză și reproiectare cuprinzătoare a proceselor. Identificăm ineficiențele și oportunitățile de automatizare, optimizând colaborarea om-mașină.</p>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Reimaginați-vă operațiunile pentru performanță maximă prin analiza și reproiectarea completă a proceselor. Identificăm ineficiențe și oportunități de automatizare, optimizând colaborarea om-mașină.</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                                 <div>
                                     <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
@@ -120,9 +126,9 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact în Afaceri:</h4>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
                                     <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start"><i class="fas fa-chart-line text-blue-500 mt-1 mr-2"></i><span>Îmbunătățiri de 30-50% în eficiență</span></li>
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-blue-500 mt-1 mr-2"></i><span>Îmbunătățiri de eficiență de 30-50%</span></li>
                                         <li class="flex items-start"><i class="fas fa-bolt text-blue-500 mt-1 mr-2"></i><span>Operațiuni mai rapide și agile</span></li>
                                         <li class="flex items-start"><i class="fas fa-rocket text-blue-500 mt-1 mr-2"></i><span>Fundație pentru succesul automatizării</span></li>
                                     </ul>
@@ -131,12 +137,13 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="solution-card p-10">
                     <div class="flex items-start">
                         <div class="solution-icon bg-slate-100 text-slate-600"><i class="fas fa-cogs text-3xl"></i></div>
                         <div class="ml-6 flex-1">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Automatizare Avansată a Proceselor</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Eficientizați-vă operațiunile cu execuție inteligentă. Automatizăm fluxurile de lucru esențiale, de la sarcini zilnice la procese complexe, reducând semnificativ ineficiențele și permițând echipei să realizeze mai mult.</p>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Automatizarea Proceselor de Nivel Superior</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Elevați-vă operațiunile cu execuție inteligentă. Automatizăm fluxuri de lucru esențiale, de la sarcini zilnice la procese complexe, reducând ineficiențele și permițând echipei dvs. să obțină mai mult.</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                                 <div>
                                     <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
@@ -147,33 +154,215 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact în Afaceri:</h4>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
                                     <ul class="space-y-3 text-gray-600">
                                         <li class="flex items-start"><i class="fas fa-chart-line text-slate-500 mt-1 mr-2"></i><span>Reducere de 80-90% a proceselor manuale</span></li>
                                         <li class="flex items-start"><i class="fas fa-bolt text-slate-500 mt-1 mr-2"></i><span>Viteză, precizie și consistență sporite</span></li>
-                                        <li class="flex items-start"><i class="fas fa-rocket text-slate-500 mt-1 mr-2"></i><span>Echipe concentrate pe inițiative strategice</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-slate-500 mt-1 mr-2"></i><span>Echipe focusate pe inițiative strategice</span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="solution-card p-10">
+                    <div class="flex items-start">
+                        <div class="solution-icon bg-teal-50 text-teal-500"><i class="fas fa-file-alt text-3xl"></i></div>
+                        <div class="ml-6 flex-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Procesare Inteligentă a Documentelor</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Depășiți haosul documentelor și deblocați date valoroase. Soluțiile noastre IDP extrag, clasifică și validează automat informații din orice document, transformând fișierele în active acționabile.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i><span>OCR avansat cu NLP și ML</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i><span>Clasificare inteligentă a documentelor</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i><span>Integrare fluidă cu ERP/CRM</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-teal-400 mt-1 mr-2"></i><span>Reducere de 80-90% a introducerii manuale</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-teal-400 mt-1 mr-2"></i><span>Viteză de procesare și conformitate sporite</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-teal-400 mt-1 mr-2"></i><span>Date valoroase deblocate pentru perspective noi</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
+                <div class="solution-card p-10">
+                    <div class="flex items-start">
+                        <div class="solution-icon bg-yellow-100 text-yellow-600"><i class="fas fa-chart-line text-3xl"></i></div>
+                        <div class="ml-6 flex-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Analiză și Inteligența Datelor</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Transformați datele într-un avantaj clar cu perspective ușor de înțeles și acționabile. Soluțiile noastre transformă datele brute în active strategice care conduc la decizii mai bune.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Conducte de date complete (end-to-end)</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Analize avansate & dashboard-uri interactive</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Portaluri AI "Discută cu Datele Tale"</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-yellow-500 mt-1 mr-2"></i><span>Date fiabile și de înaltă calitate</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-yellow-500 mt-1 mr-2"></i><span>Vizibilitate operațională sporită</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-yellow-500 mt-1 mr-2"></i><span>Pârghie pentru noi surse de venit</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-card p-10">
+                    <div class="flex items-start">
+                        <div class="solution-icon bg-blue-50 text-blue-500"><i class="fas fa-link text-3xl"></i></div>
+                        <div class="ml-6 flex-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Date și Sisteme Unificate</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Creați un flux operațional fluid prin integrarea sistemelor cheie. Soluțiile noastre elimină silozurile de date și permit partajarea informațiilor în timp real în întreaga organizație.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i><span>Integrare robustă a datelor & ETL/ELT</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i><span>Dezvoltare API & Conectori de sistem</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i><span>Eliminarea strategică a silozurilor</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-blue-400 mt-1 mr-2"></i><span>Reducerea erorilor și a manipulării manuale</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-blue-400 mt-1 mr-2"></i><span>Eficiență operațională îmbunătățită</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-blue-400 mt-1 mr-2"></i><span>O viziune unificată și precisă asupra afacerii</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-card p-10">
+                    <div class="flex items-start">
+                        <div class="solution-icon bg-indigo-100 text-indigo-600"><i class="fas fa-shopping-cart text-3xl"></i></div>
+                        <div class="ml-6 flex-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Operațiuni E-commerce Automatizate</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Optimizați-vă performanța e-commerce cu gestiune automată a stocurilor, prețurilor și comenzilor. Soluțiile noastre vă ajută să scalați operațiunile eficient, oferind experiențe excepționale clienților.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i><span>Integrare e-commerce completă</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i><span>Motoare dinamice de inventar & prețuri</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i><span>Procesare simplificată a comenzilor</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-indigo-500 mt-1 mr-2"></i><span>Eficiență operațională pentru scalare</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-indigo-500 mt-1 mr-2"></i><span>Satisfacție crescută a clienților</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-indigo-500 mt-1 mr-2"></i><span>Vânzări crescute și agilitate pe piață</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-card p-10">
+                    <div class="flex items-start">
+                        <div class="solution-icon bg-emerald-50 text-emerald-500"><i class="fas fa-pen-fancy text-3xl"></i></div>
+                        <div class="ml-6 flex-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Scalează Conținutul cu AI</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Extindeți impactul conținutului cu planificare, creare și distribuție inteligentă. Soluțiile noastre de conținut bazate pe AI vă ajută să angajați publicul mai eficient, optimizând resursele.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i><span>Strategie și creare de conținut cu AI</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i><span>Adaptare conținut multi-platformă</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i><span>Programare și distribuție inteligentă</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-emerald-400 mt-1 mr-2"></i><span>Producție de conținut și consistență sporite</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-emerald-400 mt-1 mr-2"></i><span>Angajament mai puternic al publicului</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-emerald-400 mt-1 mr-2"></i><span>Perspective acționabile din analize</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-card p-10">
+                    <div class="flex items-start">
+                        <div class="solution-icon bg-teal-100 text-teal-600"><i class="fas fa-brain text-3xl"></i></div>
+                        <div class="ml-6 flex-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Soluții AI Personalizate</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Obțineți un avantaj strategic cu soluții AI personalizate pentru provocările dvs. specifice. Dezvoltăm modele și aplicații AI personalizate care răspund nevoilor și oportunităților unice ale afacerii dvs.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Capabilități Cheie:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i><span>Dezvoltare de modele AI personalizate</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i><span>Agenți AI securizați (On-Premise)</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i><span>Inteligența comunicării cu ajutorul AI</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Impact de Afaceri:</h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-teal-500 mt-1 mr-2"></i><span>Soluții inovatoare la probleme complexe</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-teal-500 mt-1 mr-2"></i><span>Capacități decizionale îmbunătățite</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-teal-500 mt-1 mr-2"></i><span>Câștiguri semnificative de eficiență</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Sunteți Gata să Vă Transformați Afacerea?</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Tehnologia potrivită, aplicată cu experiență, poate redefinea ce este posibil pentru afacerea dvs. Să discutăm provocările dvs. și să explorăm cum soluțiile noastre de automatizare și AI vă pot ajuta să atingeți succesul.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out">
+                    Programați o Consultanță <i class="fas fa-calendar-alt ml-2"></i>
+                </a>
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out">
+                    Contactați Echipa Noastră <i class="fas fa-envelope ml-2"></i>
+                </a>
+            </div>
         </div>
     </div>
     
-    <footer class="bg-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <p class="text-center text-gray-300">© 2025 AutomateIQ. Toate drepturile rezervate.</p>
-        </div>
-    </footer>
-
     <script>
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
-            this.querySelector('.fa-bars').classList.toggle('hidden');
-            this.querySelector('.fa-times').classList.toggle('hidden');
+            const barsIcon = this.querySelector('.fa-bars');
+            const timesIcon = this.querySelector('.fa-times');
+            
             menu.classList.toggle('hidden');
+            barsIcon.classList.toggle('hidden');
+            timesIcon.classList.toggle('hidden');
         });
     </script>
 </body>
