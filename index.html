@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+       
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -16,13 +16,13 @@
             --dark: #0f172a;
             --light: #f8fafc;
         }
-        
+       
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             background-color: #f8fafc;
         }
-        
+       
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -39,74 +39,74 @@
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
             color: white;
         }
-        
+       
         .gradient-text {
             background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        
+       
         .gradient-bg {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
         }
-        
+       
         .card-hover {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        
+       
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
         }
-        
+       
         .floating-cta {
             animation: float 6s ease-in-out infinite;
             box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
         }
-        
+       
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-12px); }
             100% { transform: translateY(0px); }
         }
-        
+       
         .scroll-down {
             animation: bounce 2s infinite;
         }
-        
+       
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
             40% {transform: translateY(-20px);}
             60% {transform: translateY(-10px);}
         }
-        
+       
         .fade-in {
             opacity: 0;
             transition: opacity 0.6s ease-in, transform 0.6s ease-out;
             transform: translateY(20px);
         }
-        
+       
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+       
         .sticky-nav {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-        
+       
         .sticky-nav.scrolled {
             background-color: rgba(255, 255, 255, 0.98);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
             border-bottom: 1px solid rgba(241, 245, 249, 0.8);
         }
-        
+       
         .nav-link {
             position: relative;
         }
-        
+       
         .nav-link:after {
             content: '';
             position: absolute;
@@ -117,26 +117,26 @@
             background-color: var(--primary);
             transition: width 0.3s ease;
         }
-        
+       
         .nav-link:hover:after {
             width: 100%;
         }
-        
+       
         .feature-icon {
             transition: all 0.3s ease;
         }
-        
+       
         .feature-card:hover .feature-icon {
             transform: scale(1.1);
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
             color: white;
         }
-        
+       
         .testimonial-card {
             position: relative;
             overflow: hidden;
         }
-        
+       
         .testimonial-card:before {
             content: '';
             position: absolute;
@@ -147,16 +147,16 @@
             background: linear-gradient(to bottom, #6366f1, #8b5cf6);
             transition: height 0.4s ease;
         }
-        
+       
         .testimonial-card:hover:before {
             height: 100%;
         }
-        
+       
         .blog-card {
             position: relative;
             overflow: hidden;
         }
-        
+       
         .blog-card:after {
             content: '';
             position: absolute;
@@ -169,11 +169,11 @@
             transform-origin: left;
             transition: transform 0.4s ease;
         }
-        
+       
         .blog-card:hover:after {
             transform: scaleX(1);
         }
-        
+       
         .input-glow:focus {
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
         }
@@ -287,33 +287,33 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <a href="industries.html" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
+                        <a href="#industries" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
                             Industries
                             <i class="fas fa-chevron-down ml-2 text-xs opacity-80 transition-transform group-hover:rotate-180"></i>
                         </a>
                         <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-1 group-hover:translate-y-0 border border-slate-100 overflow-hidden">
                             <div class="py-1.5">
-                                <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                                <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                                     <i class="fas fa-calculator mr-2 text-indigo-500 w-4 text-center"></i>
                                     Accounting & Finance
                                 </a>
-                                <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                                <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                                     <i class="fas fa-shopping-bag mr-2 text-indigo-500 w-4 text-center"></i>
                                     E-commerce & Retail
                                 </a>
-                                <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                                <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                                     <i class="fas fa-truck mr-2 text-indigo-500 w-4 text-center"></i>
                                     Logistics & Supply Chain
                                 </a>
-                                <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                                <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                                     <i class="fas fa-gavel mr-2 text-indigo-500 w-4 text-center"></i>
                                     Legal & Compliance
                                 </a>
-                                <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                                <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                                     <i class="fas fa-heartbeat mr-2 text-indigo-500 w-4 text-center"></i>
                                     Healthcare
                                 </a>
-                                <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
+                                <a href="#" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
                                     <i class="fas fa-home mr-2 text-indigo-500 w-4 text-center"></i>
                                     Real Estate
                                 </a>
@@ -327,7 +327,7 @@
 
                 <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
                     <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
-                    <a href="ro/index.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+                    <a href="ro/index-ro.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
                 </div>
                 
                 <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
@@ -340,20 +340,20 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-        
+       
         <div id="mobileMenu" class="hidden md:hidden bg-white absolute top-full left-0 right-0 shadow-lg py-4 px-6">
-            <a href="#services" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Solutions</a>
+            <a href="services.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Solutions</a>
             <a href="industries.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Industries</a>
             <a href="#blog" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Blog</a>
             <a href="#about" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">About</a>
             <a href="#careers" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Careers</a>
             
-            <div class="pt-4 pb-2 border-b border-slate-100">
-                <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
-                    <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
-                    <a href="ro/index.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
-                </div>
-            </div>
+ <div class="pt-4 pb-2 border-b border-slate-100">
+    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
+        <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+        <a href="ro/index-ro.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+    </div>
+</div>
 
             <button class="mt-4 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3 rounded-lg transition shadow hover:shadow-md font-medium">
                 Free Consultation
@@ -366,7 +366,7 @@
             <div class="relative">
                 <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-indigo-100/50 blur-3xl"></div>
                 <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-purple-100/50 blur-3xl"></div>
-                
+               
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6 relative z-10">
                     <span class="gradient-text">Transform</span> Your Business with Intelligent Automation
                 </h1>
@@ -382,7 +382,7 @@
                         <i class="fas fa-play-circle mr-2 text-indigo-600"></i> Watch Demo
                     </button>
                 </div>
-                
+               
                 <div class="mt-12 flex items-center space-x-6">
                     <div class="flex -space-x-2">
                         <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Client">
@@ -406,7 +406,7 @@
                 </div>
                 <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-purple-500/10 blur-xl"></div>
                 <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-indigo-500/10 blur-xl"></div>
-                
+               
                 <div class="glass-card absolute -bottom-4 -left-4 z-20 p-4 rounded-xl shadow-lg">
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600">
@@ -420,7 +420,7 @@
                 </div>
             </div>
         </div>
-        
+       
         <div class="max-w-7xl mx-auto mt-16 text-center">
             <a href="#services" class="scroll-down inline-flex flex-col items-center text-indigo-600 hover:text-indigo-800">
                 <span class="text-sm font-medium mb-1">Explore More</span>
@@ -429,8 +429,546 @@
         </div>
     </section>
 
+    <section class="py-20 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">WHO BENEFITS</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Sound Familiar? Let's Fix It.</h2>
+            <p class="text-lg text-slate-600">
+                If these challenges define your day-to-day, our solutions are engineered to change that.
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-6 feature-icon">
+                    <i class="fas fa-tasks text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Buried in Repetitive Tasks?</h3>
+                <p class="text-slate-600">
+                    Free your talented team from manual grinds. Our smart automation lets them focus on innovation and delivering high-impact results.
+                </p>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6 feature-icon">
+                    <i class="fas fa-clock text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Operations Hijacking Your Strategy Time?</h3>
+                <p class="text-slate-600">
+                    Ditch the daily operational fires, reclaim your strategy time. Our intelligent automation streamlines processes, empowering you to drive growth and lead effectively.
+                </p>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
+                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6 feature-icon">
+                    <i class="fas fa-chart-bar text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Data Overload, Insight Underload?</h3>
+                <p class="text-slate-600">
+                    Turn data chaos into decision-making clarity. We deliver sharp, actionable insights from your complex information, powering confident choices and business growth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 px-6 lg:px-16 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">OUR SOLUTIONS</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Your Edge, Delivered.</h2>
+            <p class="text-lg text-slate-600">
+                Intelligent Automation & Custom AI, Engineered to Propel You Forward.
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mb-4 feature-icon">
+                    <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Next-Level Process Automation</h3>
+                <p class="text-slate-600 text-sm">
+                    Elevate your operations. We intelligently automate core workflows, from daily tasks to complex processes, significantly reducing inefficiencies and empowering your team to achieve more.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mb-4 feature-icon">
+                    <i class="fas fa-file-invoice-dollar text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">E-commerce Operations, Automated</h3>
+                <p class="text-slate-600 text-sm">
+                    Optimize your e-commerce performance. We automate key operations—inventory, dynamic pricing, fulfillment—to help you scale efficiently, enhance customer satisfaction, and strengthen your market position.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mb-4 feature-icon">
+                    <i class="fas fa-newspaper text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Scale Your Content with AI</h3>
+                <p class="text-slate-600 text-sm">
+                    Expand your content's impact with AI. We help you intelligently plan, create, and distribute engaging, on-brand content across your platforms, effectively boosting your reach and audience connection.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mb-4 feature-icon">
+                    <i class="fas fa-database text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Unlock Insights From Your Data</h3>
+                <p class="text-slate-600 text-sm">
+                    Automatically clean, standardize, and prepare your data for analysis and reporting. Turn your business data into clear, actionable insights that drive growth, improve operations, and inform smarter decisions.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mb-4 feature-icon">
+                    <i class="fas fa-brain text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Unified Data & Systems</h3>
+                <p class="text-slate-600 text-sm">
+                    Create seamless operational flow. We integrate your key business systems and break down data silos, fostering a unified environment for improved efficiency and clearer insights.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+           
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
+                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mb-4 feature-icon">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Custom AI Solutions</h3>
+                <p class="text-slate-600 text-sm">
+                    Get intelligent AI built specifically for your unique business needs – from private data assistants to specialized problem-solving tools.
+                </p>
+                <a href="#" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                    Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-12 text-center">
+            <a href="services.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                Explore All Solutions <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="industries" class="py-20 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">INDUSTRIES</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Tailored for Your Industry</h2>
+            <p class="text-lg text-slate-600">
+                Sector-specific automation solutions designed for your unique challenges
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl border border-indigo-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                        <i class="fas fa-coins text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Finance & Accounting</h3>
+                        <p class="text-slate-600 text-sm">
+                            Enhance accuracy and efficiency by automating critical financial processes: from invoices and reconciliations to compliance and reporting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">E-commerce</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automate product listings, dynamic pricing, inventory management, and key customer engagement workflows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                        <i class="fas fa-heartbeat text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Healthcare</h3>
+                        <p class="text-slate-600 text-sm">
+                            Digitize patient forms, automate essential communications, and streamline back-office workflows, securely and efficiently.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mr-4">
+                        <i class="fas fa-home text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Real Estate</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automate lease administration, streamline critical property data workflows, and enhance tenant communications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-xl border border-yellow-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">HR & Recruitment</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automate resume screening, simplify employee onboarding, and efficiently manage HR inquiries and core administrative processes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-gradient-to-br from-red-50 to-white p-6 rounded-xl border border-red-100 card-hover fade-in">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mr-4">
+                        <i class="fas fa-bullhorn text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Marketing Agencies</h3>
+                        <p class="text-slate-600 text-sm">
+                            Automate client reporting, leverage AI-assisted content creation, and streamline campaign management for greater impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-12 text-center">
+            <a href="industries.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                See All Industries <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 lg:px-16 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">OUR PROCESS</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Simple, Transparent Process</h2>
+            <p class="text-lg text-slate-600">
+                From discovery to deployment, we make automation accessible
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto">
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -translate-y-1/2"></div>
+                <div class="hidden md:block absolute top-1/2 left-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 -translate-y-1/2 progress-line" style="width: 0%"></div>
+               
+                <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Discovery</h3>
+                        <p class="text-slate-600 text-sm">
+                            We analyze your processes to identify automation opportunities.
+                        </p>
+                    </div>
+                   
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Prototype</h3>
+                        <p class="text-slate-600 text-sm">
+                            We build a testable version to validate the solution approach.
+                        </p>
+                    </div>
+                   
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Delivery</h3>
+                        <p class="text-slate-600 text-sm">
+                            We implement the solution and train your team on usage.
+                        </p>
+                    </div>
+                   
+                    <div class="text-center fade-in">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
+                            <span class="text-2xl font-bold">4</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Optimize</h3>
+                        <p class="text-slate-600 text-sm">
+                            We monitor performance and make continuous improvements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-16 text-center">
+            <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-medium">
+                <span class="relative z-10">Start Your Automation Journey</span>
+                <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">RESULTS</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Proven Impact</h2>
+            <p class="text-lg text-slate-600">
+                The measurable results we've delivered for businesses like yours
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+                <div class="text-5xl font-bold text-indigo-600 mb-4">90%</div>
+                <p class="text-slate-600 mb-6">
+                    "Reduced invoice processing time by 90%, saving our accounting team 25 hours weekly."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="font-medium">Sarah K.</div>
+                        <div class="text-sm text-slate-500">CFO, Manufacturing Co.</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+                <div class="text-5xl font-bold text-purple-600 mb-4">40h</div>
+                <p class="text-slate-600 mb-6">
+                    "Recovered 40 hours/month in admin work, allowing our agents to focus on clients."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="font-medium">Michael T.</div>
+                        <div class="text-sm text-slate-500">Broker, Real Estate Firm</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+                <div class="text-5xl font-bold text-blue-600 mb-4">3d</div>
+                <p class="text-slate-600 mb-6">
+                    "Deployed a custom AI agent in 3 days that now handles 80% of customer inquiries."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="font-medium">Jessica L.</div>
+                        <div class="text-sm text-slate-500">COO, E-commerce Business</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-20 px-6 lg:px-16 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">INSIGHTS</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Automation Insights</h2>
+            <p class="text-lg text-slate-600">
+                Latest trends, strategies and case studies in business automation
+            </p>
+        </div>
+       
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
+                <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center text-white">
+                    <i class="fas fa-robot text-6xl opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-semibold text-indigo-600 mb-2">AUTOMATION</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">5 Processes to Automate First</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Discover which business processes deliver the quickest ROI when automated.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
+                        Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+           
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
+                <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+                    <i class="fas fa-brain text-6xl opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-semibold text-blue-600 mb-2">AI TRENDS</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Small Business AI Strategies</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Affordable AI solutions that can transform operations without enterprise budgets.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
+                        Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+           
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
+                <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center text-white">
+                    <i class="fas fa-database text-6xl opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-semibold text-purple-600 mb-2">DATA TRANSFORMATION</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">From Data to Decisions</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        Practical steps to clean, organize and extract insights from your business data.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
+                        Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+        <div class="max-w-7xl mx-auto mt-12 text-center">
+            <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                View All Articles <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 lg:px-16 bg-white">
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 md:p-12">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Automation Insights</h3>
+                    <p class="text-slate-600">
+                        Get the latest trends and tips in AI and business automation.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 rounded-l-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 input-glow">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-r-lg transition font-medium">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-xs text-slate-500 mt-2">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 lg:px-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto text-center relative">
+            <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-white/10 blur-2xl"></div>
+            <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-purple-500/20 blur-2xl"></div>
+           
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready to Transform Your Business?</h2>
+            <p class="text-xl mb-8 opacity-90 relative z-10">
+                Schedule a free consultation to discover how automation can save your team time and reduce errors.
+            </p>
+            <button class="relative overflow-hidden group bg-white text-indigo-600 hover:bg-gray-100 px-8 py-4 rounded-lg transition shadow-lg hover:shadow-xl font-medium text-lg z-10">
+                <span class="relative z-10">Book Free Consultation</span>
+                <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+        </div>
+    </section>
+
     <footer class="bg-slate-900 text-slate-300 py-16 px-6 lg:px-16">
-        </footer>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
+                        <span class="text-xl font-bold text-white">AutomateIQ</span>
+                    </div>
+                    <p class="mb-6 text-slate-400">
+                        AI-driven automation solutions that help businesses work smarter, not harder.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+               
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Workflow Automation</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Document AI</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Data Transformation</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">AI Assistants</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Custom Solutions</a></li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition text-slate-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Contact</a></li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Community</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Status</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400">© 2025 AutomateIQ. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white mr-6">Privacy Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Mobile menu toggle
