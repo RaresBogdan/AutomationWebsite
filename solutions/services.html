@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8 Pillars of Transformation | [Your Company Name]</title>
+    <title>Our Solutions | AutomateIQ Business Automation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -14,135 +15,42 @@
             --dark: #1e293b;
             --light: #f8fafc;
         }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-        }
-        
-        .solution-card {
-            transition: all 0.3s ease;
-            border-radius: 16px;
-            background: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .solution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .solution-icon {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .solution-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .accordion-content.open {
-            max-height: 1000px;
-            transition: max-height 0.5s ease-in;
-        }
-        
-        .accordion-toggle {
-            transition: all 0.3s ease;
-        }
-        
-        .accordion-toggle.open {
-            transform: rotate(180deg);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
-        .delay-6 { animation-delay: 0.6s; }
-        .delay-7 { animation-delay: 0.7s; }
-        .delay-8 { animation-delay: 0.8s; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.6; }
+        .hero-gradient { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); }
+        .solution-card { transition: all 0.3s ease; border-radius: 16px; background: white; position: relative; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        .solution-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .solution-icon { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 20px; margin-bottom: 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .solution-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+        .gradient-bg { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%); }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-robot text-2xl text-blue-600 mr-2"></i>
-                        <span class="text-xl font-bold text-gray-900">[Your Company]</span>
-                    </div>
+                    <a href="../index.html" class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
+                        <span class="text-xl font-bold text-gray-900">AutomateIQ</span>
+                    </a>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#" class="nav-link border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
-                        <a href="#" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Solutions</a>
-                        <a href="#" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
-                        <a href="#" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Case Studies</a>
-                        <a href="#" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
+                        <a href="../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="#" class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Solutions</a>
+                        <a href="../industries.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Industries</a>
+                        <a href="../index.html#blog" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Blog</a>
                     </div>
                 </div>
-                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
+                    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
+                        <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                        <a href="../ro/servicii.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+                    </div>
                     <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
                         Get Started
                     </button>
                 </div>
                 <div class="-mr-2 flex items-center sm:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
-                        <span class="sr-only">Open main menu</span>
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars block h-6 w-6"></i>
                         <i class="fas fa-times hidden h-6 w-6"></i>
                     </button>
@@ -150,38 +58,39 @@
             </div>
         </div>
         
-        <!-- Mobile menu -->
         <div class="hidden sm:hidden" id="mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="#" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
-                <a href="#" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Solutions</a>
-                <a href="#" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
-                <a href="#" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Case Studies</a>
-                <a href="#" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
-                <div class="mt-4 pl-3 pr-4">
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">
-                        Get Started
-                    </button>
+                <a href="../index.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+                <a href="#" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Solutions</a>
+                <a href="../industries.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Industries</a>
+                <a href="../index.html#blog" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Blog</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-200 px-4 space-y-4">
+                 <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
+                    <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                    <a href="../ro/servicii.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
                 </div>
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition">
+                    Get Started
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="hero-gradient text-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight fade-in">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
                     Our Solutions: Engineered for Your Success
                 </h1>
-                <p class="mt-6 max-w-2xl mx-auto text-xl fade-in delay-1">
+                <p class="mt-6 max-w-2xl mx-auto text-xl">
                     In today's dynamic business landscape, harnessing the right technology isn't just an advantage—it's fundamental to your growth and competitive edge.
                 </p>
-                <div class="mt-10 fade-in delay-2">
-                    <a href="#solutions" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-gray-50 transition duration-150 ease-in-out">
+                <div class="mt-10">
+                    <a href="#solutions" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-gray-50 transition">
                         Explore Solutions <i class="fas fa-arrow-down ml-2"></i>
                     </a>
-                    <a href="#" class="ml-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 bg-opacity-60 hover:bg-opacity-70 transition duration-150 ease-in-out">
+                    <a href="#" class="ml-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 bg-opacity-60 hover:bg-opacity-70 transition">
                         Schedule Consultation <i class="fas fa-calendar-alt ml-2"></i>
                     </a>
                 </div>
@@ -189,882 +98,82 @@
         </div>
     </div>
 
- 
-
-    <!-- Solutions Grid -->
     <div id="solutions" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12 fade-in delay-4">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">
                 Explore Our Core Solutions
             </h2>
-            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Solution 1 -->
-                <div class="solution-card p-10 fade-in delay-1">
+                <div class="solution-card p-10">
                     <div class="flex items-start">
-                        <div class="solution-icon bg-blue-100 text-blue-600">
-                            <i class="fas fa-project-diagram text-3xl"></i>
-                        </div>
+                        <div class="solution-icon bg-blue-100 text-blue-600"><i class="fas fa-project-diagram text-3xl"></i></div>
                         <div class="ml-6 flex-1">
                             <h3 class="text-3xl font-bold text-gray-900 mb-4">Strategic Process Transformation</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Reimagine your operations for peak performance through comprehensive process analysis and redesign. 
-                                We identify inefficiencies and automation opportunities while optimizing human-machine collaboration.
-                            </p>
-                            
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Reimagine your operations for peak performance through comprehensive process analysis and redesign. We identify inefficiencies and automation opportunities while optimizing human-machine collaboration.</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                                 <div>
                                     <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
                                     <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                            <span>Deep Process Analysis & Discovery</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                            <span>Value Stream Mapping & Lean Principles</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                            <span>Human-Centric Automation Design</span>
-                                        </li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i><span>Deep Process Analysis & Discovery</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i><span>Value Stream Mapping & Lean Principles</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i><span>Human-Centric Automation Design</span></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
                                     <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-chart-line text-blue-500 mt-1 mr-2"></i>
-                                            <span>30-50% efficiency improvements</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-bolt text-blue-500 mt-1 mr-2"></i>
-                                            <span>Faster, more agile operations</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-rocket text-blue-500 mt-1 mr-2"></i>
-                                            <span>Foundation for automation success</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="flex space-x-4">
-                                <a href="/solutions/process-transformation" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                                    Explore Solution
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-content mt-6" id="solution1">
-                        <div class="pt-6 border-t border-gray-200">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Our Approach</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Process Discovery</h5>
-                                            <p>Comprehensive mapping of current-state workflows to identify bottlenecks and automation opportunities.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Lean Optimization</h5>
-                                            <p>Applying lean principles to eliminate waste and streamline value delivery before automation.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Implementation</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Change Management</h5>
-                                            <p>Robust support for successful adoption and lasting impact across your organization.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Roadmap Development</h5>
-                                            <p>Clear, actionable plan for implementing redesigned processes with measurable milestones.</p>
-                                        </li>
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-blue-500 mt-1 mr-2"></i><span>30-50% efficiency improvements</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-blue-500 mt-1 mr-2"></i><span>Faster, more agile operations</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-blue-500 mt-1 mr-2"></i><span>Foundation for automation success</span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-              <!-- Solution 2 - With Neutral Slate Blue Color Scheme -->
-<div class="solution-card p-10 fade-in delay-2">
-    <div class="flex items-start">
-        <div class="solution-icon bg-slate-100 text-slate-600">
-            <i class="fas fa-cogs text-3xl"></i>
-        </div>
-        <div class="ml-6 flex-1">
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">Next-Level Process Automation</h3>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                Elevate your operations with intelligent execution. We automate core workflows, from daily tasks to complex end-to-end processes, significantly reducing inefficiencies and empowering your team to achieve more.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-slate-500 mt-1 mr-2"></i>
-                            <span>Advanced RPA with AI augmentation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-slate-500 mt-1 mr-2"></i>
-                            <span>Smart workflow orchestration</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-slate-500 mt-1 mr-2"></i>
-                            <span>Seamless cross-platform integration</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-chart-line text-slate-500 mt-1 mr-2"></i>
-                            <span>80-90% reduction in manual processes</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-bolt text-slate-500 mt-1 mr-2"></i>
-                            <span>Enhanced speed, accuracy and consistency</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-rocket text-slate-500 mt-1 mr-2"></i>
-                            <span>Teams focused on strategic initiatives</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="flex space-x-4">
-                <a href="/solutions/process-automation" class="flex-1 bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                    Explore Solution
-                </a>
-                <button onclick="toggleAccordion('solution2')" class="flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-150 ease-in-out">
-                    <i class="fas fa-chevron-down mr-2 accordion-toggle" id="toggle2"></i> Details
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="accordion-content mt-6" id="solution2">
-        <div class="pt-6 border-t border-gray-200">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Our Technology</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">AI-Powered Automation</h5>
-                            <p>Combining RPA with machine learning for intelligent decision-making in workflows.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">Low-Code Platforms</h5>
-                            <p>Enabling rapid development and deployment of automation solutions.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Implementation</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">Phased Rollout</h5>
-                            <p>Gradual implementation with continuous monitoring and optimization.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">Center of Excellence</h5>
-                            <p>Establishing internal capabilities for ongoing automation development.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                
-           <!-- Solution 3 - With Lively Teal Color Scheme -->
-<div class="solution-card p-10 fade-in delay-3">
-    <div class="flex items-start">
-        <div class="solution-icon bg-teal-50 text-teal-500">
-            <i class="fas fa-file-alt text-3xl"></i>
-        </div>
-        <div class="ml-6 flex-1">
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">Intelligent Document Processing</h3>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                Conquer document chaos and unlock valuable data. Our AI-powered IDP solutions automatically extract, classify, and validate information from any document, transforming your paper and digital files into actionable assets.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
-                            <span>Advanced OCR with NLP and ML</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
-                            <span>Smart document classification</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
-                            <span>Seamless ERP/CRM integration</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-chart-line text-teal-400 mt-1 mr-2"></i>
-                            <span>80-90% reduction in manual data entry</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-bolt text-teal-400 mt-1 mr-2"></i>
-                            <span>Improved compliance and processing speed</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-rocket text-teal-400 mt-1 mr-2"></i>
-                            <span>Valuable data unlocked for better insights</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="flex space-x-4">
-                <a href="/solutions/document-processing" class="flex-1 bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                    Explore Solution
-                </a>
-                <button onclick="toggleAccordion('solution3')" class="flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-150 ease-in-out">
-                    <i class="fas fa-chevron-down mr-2 accordion-toggle" id="toggle3"></i> Details
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="accordion-content mt-6" id="solution3">
-        <div class="pt-6 border-t border-gray-200">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Document Types</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">Structured Documents</h5>
-                            <p>Forms, invoices, receipts with consistent layouts and fields.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">Semi-Structured</h5>
-                            <p>Contracts, reports with some consistent elements but variable content.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Technology Stack</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">Computer Vision</h5>
-                            <p>For layout recognition and complex document understanding.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">Natural Language Processing</h5>
-                            <p>For contextual understanding and data validation.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                
-                <!-- Solution 4 -->
-                <div class="solution-card p-10 fade-in delay-4">
+                <div class="solution-card p-10">
                     <div class="flex items-start">
-                        <div class="solution-icon bg-yellow-100 text-yellow-600">
-                            <i class="fas fa-chart-line text-3xl"></i>
-                        </div>
+                        <div class="solution-icon bg-slate-100 text-slate-600"><i class="fas fa-cogs text-3xl"></i></div>
                         <div class="ml-6 flex-1">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Data Intelligence & Analytics</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Turn your data into a clear advantage with understandable, actionable insights. Our solutions transform raw data into strategic assets that drive better decisions across your organization.
-                            </p>
-                            
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Next-Level Process Automation</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Elevate your operations with intelligent execution. We automate core workflows, from daily tasks to complex end-to-end processes, significantly reducing inefficiencies and empowering your team to achieve more.</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                                 <div>
                                     <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
                                     <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
-                                            <span>End-to-End Data Intelligence Pipelines</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
-                                            <span>Advanced Analytics & Interactive Dashboards</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
-                                            <span>"Chat with Your Data" AI Portals</span>
-                                        </li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-slate-500 mt-1 mr-2"></i><span>Advanced RPA with AI augmentation</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-slate-500 mt-1 mr-2"></i><span>Smart workflow orchestration</span></li>
+                                        <li class="flex items-start"><i class="fas fa-check-circle text-slate-500 mt-1 mr-2"></i><span>Seamless cross-platform integration</span></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
                                     <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-chart-line text-yellow-500 mt-1 mr-2"></i>
-                                            <span>Reliable, high-quality data for decision-making</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-bolt text-yellow-500 mt-1 mr-2"></i>
-                                            <span>Enhanced operational visibility</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-rocket text-yellow-500 mt-1 mr-2"></i>
-                                            <span>Ability to leverage data for new revenue streams</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="flex space-x-4">
-                                <a href="/solutions/data-analytics" class="flex-1 bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                                    Explore Solution
-                                </a>
- 
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-content mt-6" id="solution4">
-                        <div class="pt-6 border-t border-gray-200">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Data Products</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Interactive Dashboards</h5>
-                                            <p>Real-time visualization of key metrics and KPIs.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Predictive Models</h5>
-                                            <p>Forecasting and scenario planning tools.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Implementation</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Data Governance</h5>
-                                            <p>Establishing policies and standards for data quality.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">User Training</h5>
-                                            <p>Enabling teams to leverage analytics effectively.</p>
-                                        </li>
+                                        <li class="flex items-start"><i class="fas fa-chart-line text-slate-500 mt-1 mr-2"></i><span>80-90% reduction in manual processes</span></li>
+                                        <li class="flex items-start"><i class="fas fa-bolt text-slate-500 mt-1 mr-2"></i><span>Enhanced speed, accuracy and consistency</span></li>
+                                        <li class="flex items-start"><i class="fas fa-rocket text-slate-500 mt-1 mr-2"></i><span>Teams focused on strategic initiatives</span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-      <!-- Solution 5 - Unified Data & Systems (Deep Blue Color Scheme) -->
-<div class="solution-card p-10 fade-in delay-5">
-    <div class="flex items-start">
-        <div class="solution-icon bg-blue-50 text-blue-500">
-            <i class="fas fa-link text-3xl"></i>
-        </div>
-        <div class="ml-6 flex-1">
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">Unified Data & Systems</h3>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                Create seamless operational flow by integrating your key business systems. Our integration solutions eliminate data silos and enable real-time information sharing across your organization.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
-                            <span>Robust Data Integration & ETL/ELT</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
-                            <span>API Development & System Connectors</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
-                            <span>Strategic Data Silo Elimination</span>
-                        </li>
-                    </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-chart-line text-blue-400 mt-1 mr-2"></i>
-                            <span>Reduction in manual data handling and errors</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-bolt text-blue-400 mt-1 mr-2"></i>
-                            <span>Improved operational efficiency</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-rocket text-blue-400 mt-1 mr-2"></i>
-                            <span>Unified, accurate view of business information</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="flex space-x-4">
-                <a href="/solutions/system-integration" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                    Explore Solution
-                </a>
-                <button onclick="toggleAccordion('solution5')" class="flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-150 ease-in-out">
-                    <i class="fas fa-chevron-down mr-2 accordion-toggle" id="toggle5"></i> Details
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="accordion-content mt-6" id="solution5">
-        <div class="pt-6 border-t border-gray-200">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Integration Types</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">Application Integration</h5>
-                            <p>Connecting business applications for seamless data flow.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">Data Integration</h5>
-                            <p>Consolidating data from multiple sources into unified views.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Technology</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">Middleware Platforms</h5>
-                            <p>For complex enterprise integration scenarios.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">API Gateways</h5>
-                            <p>For secure, scalable API management.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                
-                <!-- Solution 6 -->
-                <div class="solution-card p-10 fade-in delay-6">
-                    <div class="flex items-start">
-                        <div class="solution-icon bg-indigo-100 text-indigo-600">
-                            <i class="fas fa-shopping-cart text-3xl"></i>
-                        </div>
-                        <div class="ml-6 flex-1">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-4">E-commerce Operations, Automated</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Optimize your e-commerce performance with automated inventory, pricing, and fulfillment. Our solutions help you scale operations efficiently while delivering exceptional customer experiences.
-                            </p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                                <div>
-                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
-                                    <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
-                                            <span>Full-Cycle E-commerce Integration</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
-                                            <span>Dynamic Inventory & Pricing Engines</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
-                                            <span>Streamlined Order Fulfillment</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
-                                    <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-chart-line text-indigo-500 mt-1 mr-2"></i>
-                                            <span>Enhanced operational efficiency for scaling</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-bolt text-indigo-500 mt-1 mr-2"></i>
-                                            <span>Improved customer satisfaction</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-rocket text-indigo-500 mt-1 mr-2"></i>
-                                            <span>Increased sales and market agility</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="flex space-x-4">
-                                <a href="/solutions/ecommerce-automation" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                                    Explore Solution
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-content mt-6" id="solution6">
-                        <div class="pt-6 border-t border-gray-200">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">E-commerce Solutions</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Marketplace Integration</h5>
-                                            <p>Connecting with Amazon, eBay, Shopify and other platforms.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Inventory Synchronization</h5>
-                                            <p>Real-time stock updates across all sales channels.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Customer Experience</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Personalization</h5>
-                                            <p>AI-driven product recommendations and targeted promotions.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Automated Support</h5>
-                                            <p>Chatbots and self-service options for common inquiries.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            <!-- Solution 7 - Scale Your Content with AI (Emerald Green Color Scheme) -->
-<div class="solution-card p-10 fade-in delay-7">
-    <div class="flex items-start">
-        <div class="solution-icon bg-emerald-50 text-emerald-500">
-            <i class="fas fa-pen-fancy text-3xl"></i>
-        </div>
-        <div class="ml-6 flex-1">
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">Scale Your Content with AI</h3>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                Expand your content's impact with intelligent planning, creation, and distribution. Our AI-powered content solutions help you engage audiences more effectively while optimizing resources.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i>
-                            <span>AI-Driven Content Strategy & Creation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i>
-                            <span>Multi-Platform Content Adaptation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i>
-                            <span>Intelligent Scheduling & Distribution</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-chart-line text-emerald-400 mt-1 mr-2"></i>
-                            <span>Increased content output and consistency</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-bolt text-emerald-400 mt-1 mr-2"></i>
-                            <span>Stronger audience engagement</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-rocket text-emerald-400 mt-1 mr-2"></i>
-                            <span>Actionable insights from analytics</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="flex space-x-4">
-                <a href="/solutions/content-automation" class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                    Explore Solution
-                </a>
-                <button onclick="toggleAccordion('solution7')" class="flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-150 ease-in-out">
-                    <i class="fas fa-chevron-down mr-2 accordion-toggle" id="toggle7"></i> Details
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="accordion-content mt-6" id="solution7">
-        <div class="pt-6 border-t border-gray-200">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Content Types</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">Marketing Content</h5>
-                            <p>Blog posts, social media, email campaigns, and ads.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">Technical Content</h5>
-                            <p>Documentation, knowledge bases, and training materials.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Technology</h4>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <h5 class="font-medium text-gray-800">Natural Language Generation</h5>
-                            <p>AI that creates human-like text from data inputs.</p>
-                        </li>
-                        <li>
-                            <h5 class="font-medium text-gray-800">Content Optimization</h5>
-                            <p>SEO and engagement analysis for better performance.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                
-                <!-- Solution 8 -->
-                <div class="solution-card p-10 fade-in delay-8">
-                    <div class="flex items-start">
-                        <div class="solution-icon bg-teal-100 text-teal-600">
-                            <i class="fas fa-brain text-3xl"></i>
-                        </div>
-                        <div class="ml-6 flex-1">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Custom AI Solutions</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Gain a strategic advantage with tailored AI solutions for your specific challenges. We develop custom AI models and applications that address your unique business needs and opportunities.
-                            </p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                                <div>
-                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Key Capabilities:</h4>
-                                    <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i>
-                                            <span>Bespoke AI Model Development</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i>
-                                            <span>Secure On-Premise AI Agents</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i>
-                                            <span>AI-Powered Communication Intelligence</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-lg text-gray-900 mb-3">Business Impact:</h4>
-                                    <ul class="space-y-3 text-gray-600">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-chart-line text-teal-500 mt-1 mr-2"></i>
-                                            <span>Innovative solutions to complex problems</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-bolt text-teal-500 mt-1 mr-2"></i>
-                                            <span>Enhanced decision-making capabilities</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-rocket text-teal-500 mt-1 mr-2"></i>
-                                            <span>Significant efficiency gains and competitive edge</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="flex space-x-4">
-                                <a href="/solutions/custom-ai" class="flex-1 bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-150 ease-in-out text-center">
-                                    Explore Solution
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-content mt-6" id="solution8">
-                        <div class="pt-6 border-t border-gray-200">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">AI Applications</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Predictive Analytics</h5>
-                                            <p>Forecasting demand, risk, and opportunities.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Computer Vision</h5>
-                                            <p>Image and video analysis for quality control and more.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-xl text-gray-900 mb-4">Implementation</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Proof of Concept</h5>
-                                            <p>Validating AI approaches before full deployment.</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="font-medium text-gray-800">Model Training</h5>
-                                            <p>Using your proprietary data for optimal results.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <!-- CTA Section -->
-    <div class="bg-white py-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Ready to Transform Your Business with Intelligent Solutions?</h2>
-            <p class="text-xl text-gray-600 mb-8">
-                The right technology, expertly applied, can redefine what's possible for your business. Let's discuss your specific challenges and explore how our tailored automation and AI solutions can help you achieve your strategic objectives and secure lasting success.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out">
-                    Schedule Consultation <i class="fas fa-calendar-alt ml-2"></i>
-                </a>
-                <a href="/contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out">
-                    Contact Our Team <i class="fas fa-envelope ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">[Your Company]</h3>
-                    <p class="text-gray-300">
-                        Transforming businesses through intelligent automation and AI-powered solutions.
-                    </p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-300 hover:text-white">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Solutions</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Process Transformation</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Process Automation</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Document Processing</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Data Analytics</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-gray-300"></i>
-                            <span class="text-gray-300">123 Tech Street, Silicon Valley, CA</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 mr-2 text-gray-300"></i>
-                            <span class="text-gray-300">(555) 123-4567</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope mt-1 mr-2 text-gray-300"></i>
-                            <span class="text-gray-300">info@yourcompany.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-300 mb-4 md:mb-0">© 2023 [Your Company]. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
-                    <a href="#" class="text-gray-300 hover:text-white">Terms of Service</a>
-                    <a href="#" class="text-gray-300 hover:text-white">Cookies</a>
-                </div>
-            </div>
+             <p class="text-center text-gray-300">© 2025 AutomateIQ. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
-            const barsIcon = this.querySelector('.fa-bars');
-            const timesIcon = this.querySelector('.fa-times');
-            
+            this.querySelector('.fa-bars').classList.toggle('hidden');
+            this.querySelector('.fa-times').classList.toggle('hidden');
             menu.classList.toggle('hidden');
-            barsIcon.classList.toggle('hidden');
-            timesIcon.classList.toggle('hidden');
-        });
-        
-        // Accordion functionality
-        function toggleAccordion(id) {
-            const content = document.getElementById(id);
-            const toggle = document.querySelector(`#${id} + button .accordion-toggle, button[onclick="toggleAccordion('${id}')"] .accordion-toggle`);
-            
-            content.classList.toggle('open');
-            toggle.classList.toggle('open');
-        }
-        
-        // Add fade-in class to elements when they come into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
