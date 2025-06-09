@@ -18,6 +18,7 @@
             font-family: 'Inter', sans-serif;
             color: var(--dark);
             background-color: #f8fafc;
+            scroll-behavior: smooth;
         }
         .gradient-text {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
@@ -28,9 +29,33 @@
         .gradient-bg {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
         }
+        .sticky-nav {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .sticky-nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link.active, .nav-link:hover:after {
+            width: 100%;
+        }
         .nav-link.active {
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
+            color: var(--primary) !important;
         }
         .profile-card {
             transition: all 0.3s ease;
@@ -42,62 +67,93 @@
         .cta-section {
             background-image: linear-gradient(to right, #e0e7ff, #f3e8ff);
         }
+        .dropdown-menu {
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .group:hover .dropdown-menu,
+        .dropdown-menu:hover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+            transition-delay: 0s;
+        }
+        .dropdown-menu:before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 20px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent white transparent;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex-shrink-0 flex items-center">
-                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
-                        <span class="text-xl font-bold text-gray-900">AutomateIQ</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <nav class="flex space-x-8">
-                        <a href="index.html" class="text-gray-500 hover:text-indigo-600 px-1 pt-1 text-sm font-medium">Home</a>
-                        <a href="solutions/services.html" class="text-gray-500 hover:text-indigo-600 px-1 pt-1 text-sm font-medium">Solutions</a>
-                        <a href="industries.html" class="text-gray-500 hover:text-indigo-600 px-1 pt-1 text-sm font-medium">Industries</a>
-                        <a href="#" class="nav-link active px-1 pt-1 text-sm font-medium">About</a>
-                    </nav>
-                    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
-                        <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
-                        <a href="ro/despre-noi.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+    <nav id="navbar" class="sticky-nav fixed top-0 w-full z-40 bg-white/80 py-4 px-6 lg:px-16 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
+                <span class="text-xl font-bold text-slate-900">AutomateIQ</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="flex items-center space-x-8">
+                    <div class="group relative">
+                        <a href="solutions/services.html" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
+                            Solutions
+                            <i class="fas fa-chevron-down ml-2 text-xs opacity-80"></i>
+                        </a>
                     </div>
+                    <div class="group relative">
+                        <a href="industries.html" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
+                            Industries
+                            <i class="fas fa-chevron-down ml-2 text-xs opacity-80"></i>
+                        </a>
+                    </div>
+                    <a href="index.html#blog" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Blog</a>
+                    <a href="#" class="nav-link active text-indigo-600 font-medium">About</a>
+                    <a href="index.html#careers" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Careers</a>
                 </div>
-                <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars block h-6 w-6"></i>
-                        <i class="fas fa-times hidden h-6 w-6"></i>
-                    </button>
+                <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
+                    <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                    <a href="ro/despre.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
                 </div>
+                <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
+                    <span class="relative z-10">Free Consultation</span>
+                </button>
             </div>
+            <button id="mobileMenuButton" class="md:hidden text-slate-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
         
-        <div class="hidden md:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text-gray-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="solutions/services.html" class="text-gray-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Solutions</a>
-                <a href="industries.html" class="text-gray-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Industries</a>
-                <a href="#" class="text-indigo-700 bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium">About</a>
-            </div>
-            <div class="pt-4 pb-3 border-t border-gray-200">
-                 <div class="px-4">
-                    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
-                        <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
-                        <a href="ro/despre.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
-                    </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white absolute top-full left-0 right-0 shadow-lg py-4 px-6">
+            <a href="solutions/services.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Solutions</a>
+            <a href="industries.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Industries</a>
+            <a href="index.html#blog" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Blog</a>
+            <a href="#" class="block py-3 text-indigo-600 font-medium border-b border-slate-100">About</a>
+            <a href="index.html#careers" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Careers</a>
+            <div class="pt-4 pb-2">
+                <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
+                    <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                    <a href="ro/despre.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
                 </div>
             </div>
+             <button class="mt-4 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3 rounded-lg transition shadow hover:shadow-md font-medium">
+                Free Consultation
+            </button>
         </div>
     </nav>
 
+
     <!-- Main Content -->
-    <main>
+    <main class="pt-16">
         <!-- Hero Section -->
         <div class="bg-white">
             <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
@@ -167,7 +223,7 @@
             </div>
         </div>
 
-        <!-- New Section: Flexible Model -->
+        <!-- Flexible Model Section -->
         <div class="py-16 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
@@ -261,8 +317,8 @@
     </main>
 
     <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
             const barsIcon = this.querySelector('.fa-bars');
             const timesIcon = this.querySelector('.fa-times');
             
@@ -273,4 +329,3 @@
     </script>
 </body>
 </html>
-
