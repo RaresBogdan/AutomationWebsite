@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AutomateIQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #1e293b;
+            --light: #f1f5f9;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: #f8fafc;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+        }
+        .nav-link.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+        .profile-card {
+            transition: all 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .cta-section {
+            background-image: linear-gradient(to right, #e0e7ff, #f3e8ff);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
+                        <span class="text-xl font-bold text-gray-900">AutomateIQ</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <nav class="flex space-x-8">
+                        <a href="index.html" class="text-gray-500 hover:text-indigo-600 px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="solutions/services.html" class="text-gray-500 hover:text-indigo-600 px-1 pt-1 text-sm font-medium">Solutions</a>
+                        <a href="industries.html" class="text-gray-500 hover:text-indigo-600 px-1 pt-1 text-sm font-medium">Industries</a>
+                        <a href="#" class="nav-link active px-1 pt-1 text-sm font-medium">About</a>
+                    </nav>
+                    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
+                        <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                        <a href="ro/despre.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars block h-6 w-6"></i>
+                        <i class="fas fa-times hidden h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="solutions/services.html" class="text-gray-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Solutions</a>
+                <a href="industries.html" class="text-gray-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Industries</a>
+                <a href="#" class="text-indigo-700 bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium">About</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-200">
+                 <div class="px-4">
+                    <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
+                        <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                        <a href="ro/despre.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <div class="bg-white">
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight">
+                    Meet the <span class="gradient-text">Architects of Your Automation</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-xl text-slate-600">
+                    Where Strategy Meets Execution
+                </p>
+            </div>
+        </div>
+
+        <!-- Our Mission -->
+        <div class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900">Our Mission</h2>
+                        <p class="mt-4 text-lg text-slate-600">
+                            We founded AutomateIQ on a fundamental belief: that intelligent automation should be a powerful growth engine for every ambitious business. We saw a need for a partner that could bridge the critical gap between high-level business strategy and robust, reliable technical implementation.
+                        </p>
+                        <p class="mt-4 text-lg text-slate-600">
+                            Our mission is to deliver holistic solutions that don't just solve problems—they create lasting value and a distinct competitive advantage.
+                        </p>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <img class="rounded-xl shadow-lg" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="Team working on a strategy board">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Approach -->
+        <div class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Our Approach: The Dual-Expertise Advantage</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+                        Our unique strength lies in our dual-expertise approach. Every project is led by both a strategist and a technologist, ensuring a perfect balance between business objectives and engineering excellence.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div class="bg-slate-50 p-8 rounded-xl">
+                        <div class="flex justify-center mb-4">
+                            <div class="h-16 w-16 rounded-full gradient-bg flex items-center justify-center text-white">
+                                <i class="fas fa-chess-king text-3xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">The Strategist</h3>
+                        <p class="text-slate-600">
+                            Identifies the "why"—uncovering opportunities, designing efficient workflows, and architecting solutions that align directly with your financial and operational goals.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl">
+                        <div class="flex justify-center mb-4">
+                            <div class="h-16 w-16 rounded-full gradient-bg flex items-center justify-center text-white">
+                                <i class="fas fa-cogs text-3xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">The Engineer</h3>
+                        <p class="text-slate-600">
+                            Guarantees the "how"—building secure, scalable, and meticulously tested systems that perform flawlessly and reliably.
+                        </p>
+                    </div>
+                </div>
+                <p class="mt-12 text-center text-lg text-slate-600 max-w-4xl mx-auto">This integrated partnership means you get the best of both worlds: innovative strategies built on a foundation of rock-solid technical execution.</p>
+            </div>
+        </div>
+
+        <!-- New Section: Flexible Model -->
+        <div class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="h-16 w-16 rounded-full gradient-bg flex items-center justify-center text-white">
+                            <i class="fas fa-users text-3xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-gray-900">Our Flexible Model: Scaling for Success</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">
+                        While our core team provides the strategic and engineering leadership for every project, we maintain a trusted network of specialized freelancers. This flexible model allows us to scale our capabilities for larger, more complex engagements, ensuring you always have the right expertise at the right time—without compromising on quality or our core principles.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Founders Section -->
+        <div class="bg-white py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900">The Driving Force Behind AutomateIQ</h2>
+                </div>
+                <div class="space-y-16">
+                    <!-- Bogdan Rosu -->
+                    <div class="bg-slate-50 rounded-2xl shadow-lg overflow-hidden lg:grid lg:grid-cols-3 lg:gap-4 profile-card">
+                        <div class="lg:col-span-1">
+                             <img class="h-full w-full object-cover" src="https://placehold.co/600x800/e0e7ff/3730a3?text=Bogdan+R." alt="Headshot of Bogdan Roșu">
+                        </div>
+                        <div class="p-8 lg:p-12 lg:col-span-2">
+                            <h3 class="text-3xl font-bold text-gray-900">Bogdan Roșu</h3>
+                            <p class="mt-1 text-lg font-medium gradient-text">Founder & Automation Strategist</p>
+                            <p class="mt-6 text-lg text-slate-600">
+                                Bogdan is the strategic mind dedicated to transforming business processes. With a passion for identifying inefficiencies and engineering data-driven solutions, he excels at turning complex operational challenges into streamlined, high-ROI automations.
+                            </p>
+                             <p class="mt-4 text-lg text-slate-600">
+                                He has a proven track record of designing end-to-end data pipelines and RPA solutions that have saved clients hundreds of hours in manual work—in one case, reducing a multi-day invoice processing workflow to just one hour. Holding a degree in Law, Bogdan brings a unique perspective on logic, structure, and compliance to every project, ensuring that solutions are not only efficient but also strategically sound. His expertise lies in translating business needs into powerful automated realities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Paula Ardelean -->
+                    <div class="bg-slate-50 rounded-2xl shadow-lg overflow-hidden lg:grid lg:grid-cols-3 lg:gap-4 profile-card">
+                         <div class="lg:col-span-1 lg:order-last">
+                            <img class="h-full w-full object-cover" src="https://placehold.co/600x800/e9d5ff/581c87?text=Paula+A." alt="Headshot of Paula Ardelean">
+                        </div>
+                        <div class="p-8 lg:p-12 lg:col-span-2">
+                            <h3 class="text-3xl font-bold text-gray-900">Paula Ardelean</h3>
+                            <p class="mt-1 text-lg font-medium gradient-text">Co-Founder & Lead Engineer</p>
+                            <p class="mt-6 text-lg text-slate-600">
+                                Paula is the architect of quality and reliability, ensuring every solution is built to the highest technical standards. With a deep background in software development, embedded systems, and rigorous quality assurance within the demanding automotive industry, she brings a discipline for creating flawless, secure, and scalable technology.
+                            </p>
+                            <p class="mt-4 text-lg text-slate-600">
+                                Her experience ranges from developing automated testing frameworks to designing software for safety-critical systems like vehicle battery management and radar technology. Paula’s methodical approach, honed by industry standards like the V-Model, guarantees that every solution we deploy is not just innovative, but exceptionally robust and ready for real-world demands.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Vision -->
+        <div class="py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <div class="flex justify-center mb-4">
+                    <div class="h-16 w-16 rounded-full gradient-bg flex items-center justify-center text-white">
+                        <i class="fas fa-eye text-3xl"></i>
+                    </div>
+                </div>
+                <h2 class="text-3xl font-extrabold text-gray-900">Our Vision</h2>
+                <p class="mt-4 text-lg text-slate-600">
+                    Our vision is to build a leading consultancy known for its integrity, innovation, and unwavering focus on client success. We are continuously advancing our expertise and are committed to growing a team of passionate specialists who share our dedication to excellence. We believe in building lasting partnerships and growing alongside our clients.
+                </p>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="max-w-4xl mx-auto text-center py-16 px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-gray-900">
+                    Let's build the future of your business, together.
+                </h2>
+                <div class="mt-8 flex justify-center">
+                    <div class="inline-flex rounded-md shadow">
+                        <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white gradient-bg hover:opacity-90 transition">
+                            Schedule a Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const barsIcon = this.querySelector('.fa-bars');
+            const timesIcon = this.querySelector('.fa-times');
+            
+            menu.classList.toggle('hidden');
+            barsIcon.classList.toggle('hidden');
+            timesIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
 
