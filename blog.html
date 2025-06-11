@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | AutomateIQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #1e293b;
+            --light: #f1f5f9;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: #f8fafc;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+        }
+        .sticky-nav {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .sticky-nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link.active:after, .nav-link:hover:after {
+            width: 100%;
+        }
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="sticky-nav fixed top-0 w-full z-40 bg-white/80 py-4 px-6 lg:px-16 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
+                <span class="text-xl font-bold text-slate-900">AutomateIQ</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="flex items-center space-x-8">
+                    <a href="solutions/services.html" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium">Solutions</a>
+                    <a href="industries.html" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium">Industries</a>
+                    <a href="#" class="nav-link active text-indigo-600 font-medium">Blog</a>
+                    <a href="about.html" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">About</a>
+                    <a href="index.html#careers" class="nav-link text-slate-600 hover:text-indigo-600 transition font-medium">Careers</a>
+                </div>
+                <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1">
+                    <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                    <a href="ro/blog.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+                </div>
+                <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
+                    <span class="relative z-10">Free Consultation</span>
+                </button>
+            </div>
+            <button id="mobileMenuButton" class="md:hidden text-slate-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div id="mobileMenu" class="hidden md:hidden bg-white absolute top-full left-0 right-0 shadow-lg py-4 px-6">
+            <a href="solutions/services.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Solutions</a>
+            <a href="industries.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Industries</a>
+            <a href="#" class="block py-3 text-indigo-600 font-medium border-b border-slate-100">Blog</a>
+            <a href="about.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">About</a>
+            <a href="index.html#careers" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Careers</a>
+            <div class="pt-4 pb-2">
+                <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
+                    <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">EN</span>
+                    <a href="ro/blog.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
+                </div>
+            </div>
+             <button class="mt-4 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3 rounded-lg transition shadow hover:shadow-md font-medium">
+                Free Consultation
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <div class="bg-white">
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight">
+                    Automation & AI <span class="gradient-text">Insights</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-xl text-slate-600">
+                    Your hub for the latest trends, strategies, and success stories in business automation and artificial intelligence.
+                </p>
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Blog Post 1 -->
+                    <article class="blog-card bg-white rounded-2xl shadow-md overflow-hidden">
+                        <a href="#">
+                            <img class="h-56 w-full object-cover" src="https://images.unsplash.com/photo-1620712943543-95fc6962453a?q=80&w=2070&auto=format&fit=crop" alt="Abstract AI art">
+                        </a>
+                        <div class="p-6">
+                            <p class="text-sm font-medium text-indigo-600">AI STRATEGY</p>
+                            <a href="#" class="block mt-2">
+                                <h3 class="text-xl font-bold text-gray-900">5 Processes Your Business Should Automate First</h3>
+                                <p class="mt-3 text-base text-slate-600">Discover the low-hanging fruit of automation that can deliver the quickest and most significant ROI for your business.</p>
+                            </a>
+                            <div class="mt-6">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Read more &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="blog-card bg-white rounded-2xl shadow-md overflow-hidden">
+                        <a href="#">
+                            <img class="h-56 w-full object-cover" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data analytics dashboard">
+                        </a>
+                        <div class="p-6">
+                            <p class="text-sm font-medium text-purple-600">DATA TRANSFORMATION</p>
+                            <a href="#" class="block mt-2">
+                                <h3 class="text-xl font-bold text-gray-900">From Data Overload to Decision-Making Clarity</h3>
+                                <p class="mt-3 text-base text-slate-600">Learn practical steps to clean, organize, and extract actionable insights from your business data to fuel growth.</p>
+                            </a>
+                            <div class="mt-6">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Read more &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 3 -->
+                    <article class="blog-card bg-white rounded-2xl shadow-md overflow-hidden">
+                        <a href="#">
+                            <img class="h-56 w-full object-cover" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop" alt="Team collaborating in an office">
+                        </a>
+                        <div class="p-6">
+                            <p class="text-sm font-medium text-teal-600">COMPANY CULTURE</p>
+                            <a href="#" class="block mt-2">
+                                <h3 class="text-xl font-bold text-gray-900">How Automation Empowers Your Team, Not Replaces It</h3>
+                                <p class="mt-3 text-base text-slate-600">Explore how freeing your team from repetitive tasks unlocks their potential for innovation and high-impact work.</p>
+                            </a>
+                            <div class="mt-6">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Read more &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-300 py-16 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
+                        <span class="text-xl font-bold text-white">AutomateIQ</span>
+                    </div>
+                    <p class="mb-6 text-slate-400">
+                        AI-driven automation solutions that help businesses work smarter.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="solutions/services.html" class="hover:text-white transition text-slate-400">Process Automation</a></li>
+                        <li><a href="solutions/services.html" class="hover:text-white transition text-slate-400">Document AI</a></li>
+                        <li><a href="solutions/services.html" class="hover:text-white transition text-slate-400">Data Analytics</a></li>
+                        <li><a href="solutions/services.html" class="hover:text-white transition text-slate-400">Custom AI</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="hover:text-white transition text-slate-400">About Us</a></li>
+                        <li><a href="index.html#careers" class="hover:text-white transition text-slate-400">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white transition text-slate-400">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400">© 2025 AutomateIQ. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white mr-6">Privacy Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+       
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
 
