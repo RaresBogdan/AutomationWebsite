@@ -224,6 +224,60 @@
             width: 100%;
             left: 0;
         }
+
+        /* Mobile-specific styles */
+        @media (max-width: 640px) {
+            .pt-32 { padding-top: 6rem; }
+            .pb-24 { padding-bottom: 4rem; }
+            .py-20 { padding-top: 4rem; padding-bottom: 4rem; }
+            .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
+            .mb-16 { margin-bottom: 2rem; }
+            .mt-16 { margin-top: 2rem; }
+            .mt-12 { margin-top: 1.5rem; }
+            .text-4xl { font-size: 1.875rem; line-height: 2.25rem; }
+            .text-3xl { font-size: 1.5rem; line-height: 2rem; }
+            .gap-12 { gap: 1.5rem; }
+            .gap-8 { gap: 1rem; }
+            .gap-6 { gap: 0.75rem; }
+            
+            /* Hero Section */
+            .hero-text p, .hero-trust { display: none; }
+            .hero-buttons { justify-content: center; }
+            
+            /* Card Sections */
+            .card-text { display: none; }
+            .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .feature-icon { 
+                width: 32px; 
+                height: 32px; 
+                font-size: 1rem;
+                margin-right: 0.5rem;
+            }
+            .card-header { 
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+            }
+            .card-header h3 { 
+                font-size: 1rem; 
+                margin-bottom: 0;
+                text-align: left;
+            }
+            .card-full { padding: 1rem; }
+            
+            /* Process Section */
+            .process-line { display: none; }
+            .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .process-text { display: none; }
+            
+            /* Blog Section */
+            .blog-image { height: 8rem; }
+            
+            /* CTA and Footer */
+            .cta-text p { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-text { display: none; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
@@ -235,14 +289,12 @@
 
     <nav id="navbar" class="sticky-nav fixed top-0 w-full z-40 bg-white/80 py-4 px-6 lg:px-16 border-b border-slate-100">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            
             <div class="flex items-center">
                 <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">IL</div>
                 <span class="text-xl font-bold text-slate-900">IntegraLogic</span>
             </div>
             
             <div class="hidden md:flex items-center space-x-6">
-                
                 <div class="flex items-center space-x-8">
                     <div class="group relative">
                         <a href="solutions/services.html" class="nav-link text-slate-700 hover:text-indigo-600 transition font-medium flex items-center text-[15px]">
@@ -363,7 +415,7 @@
 
     <section class="pt-32 pb-24 px-6 lg:px-16 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="relative">
+            <div class="relative hero-text">
                 <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-indigo-100/50 blur-3xl"></div>
                 <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-purple-100/50 blur-3xl"></div>
                 
@@ -373,7 +425,7 @@
                 <p class="text-xl text-slate-600 mb-8 relative z-10">
                     AI-powered solutions that eliminate busywork, reduce errors, and unlock your team's potential.
                 </p>
-                <div class="flex flex-wrap gap-4 relative z-10">
+                <div class="flex flex-wrap gap-4 relative z-10 hero-buttons">
                     <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
                         <span class="relative z-10">Get Started</span>
                         <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -383,7 +435,7 @@
                     </button>
                 </div>
                 
-                <div class="mt-12 flex items-center space-x-6">
+                <div class="mt-12 flex items-center space-x-6 hero-trust">
                     <div class="flex -space-x-2">
                         <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Client">
                         <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
@@ -438,33 +490,39 @@
             </p>
         </div>
         
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
-                <div class="w-16 h-16 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-6 feature-icon">
-                    <i class="fas fa-tasks text-2xl"></i>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 card-grid">
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full">
+                <div class="card-header">
+                    <div class="w-16 h-16 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 feature-icon">
+                        <i class="fas fa-tasks text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Buried in Repetitive Tasks?</h3>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-4">Buried in Repetitive Tasks?</h3>
-                <p class="text-slate-600">
+                <p class="text-slate-600 card-text">
                     Free your talented team from manual grinds. Our smart automation lets them focus on innovation and delivering high-impact results.
                 </p>
             </div>
             
-            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
-                <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6 feature-icon">
-                    <i class="fas fa-clock text-2xl"></i>
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full">
+                <div class="card-header">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 feature-icon">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Operations Hijacking Your Strategy Time?</h3>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-4">Operations Hijacking Your Strategy Time?</h3>
-                <p class="text-slate-600">
+                <p class="text-slate-600 card-text">
                     Ditch the daily operational fires, reclaim your strategy time. Our intelligent automation streamlines processes, empowering you to drive growth and lead effectively.
                 </p>
             </div>
             
-            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100">
-                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6 feature-icon">
-                    <i class="fas fa-chart-bar text-2xl"></i>
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full">
+                <div class="card-header">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 feature-icon">
+                        <i class="fas fa-chart-bar text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Data Overload, Insight Underload?</h3>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-4">Data Overload, Insight Underload?</h3>
-                <p class="text-slate-600">
+                <p class="text-slate-600 card-text">
                     Turn data chaos into decision-making clarity. We deliver sharp, actionable insights from your complex information, powering confident choices and business growth.
                 </p>
             </div>
@@ -480,13 +538,15 @@
             </p>
         </div>
         
-        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
-                <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mb-4 feature-icon">
-                    <i class="fas fa-envelope text-xl"></i>
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 card-grid">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 feature-icon">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Next-Level Process Automation</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Next-Level Process Automation</h3>
-                <p class="text-slate-600 text-sm">
+                <p class="text-slate-600 text-sm card-text">
                     Elevate your operations. We intelligently automate core workflows, from daily tasks to complex processes, significantly reducing inefficiencies and empowering your team to achieve more.
                 </p>
                 <a href="solutions/services.html" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
@@ -494,12 +554,14 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
-                <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mb-4 feature-icon">
-                    <i class="fas fa-file-invoice-dollar text-xl"></i>
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 feature-icon">
+                        <i class="fas fa-file-invoice-dollar text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">E-commerce Operations, Automated</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">E-commerce Operations, Automated</h3>
-                <p class="text-slate-600 text-sm">
+                <p class="text-slate-600 text-sm card-text">
                     Optimize your e-commerce performance. We automate key operations—inventory, dynamic pricing, fulfillment—to help you scale efficiently, enhance customer satisfaction, and strengthen your market position.
                 </p>
                 <a href="solutions/services.html" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
@@ -507,12 +569,14 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
-                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mb-4 feature-icon">
-                    <i class="fas fa-newspaper text-xl"></i>
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 feature-icon">
+                        <i class="fas fa-newspaper text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Scale Your Content with AI</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Scale Your Content with AI</h3>
-                <p class="text-slate-600 text-sm">
+                <p class="text-slate-600 text-sm card-text">
                     Expand your content's impact with AI. We help you intelligently plan, create, and distribute engaging, on-brand content across your platforms, effectively boosting your reach and audience connection.
                 </p>
                 <a href="solutions/services.html" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
@@ -520,12 +584,14 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
-                <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mb-4 feature-icon">
-                    <i class="fas fa-database text-xl"></i>
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 feature-icon">
+                        <i class="fas fa-database text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Unlock Insights From Your Data</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Unlock Insights From Your Data</h3>
-                <p class="text-slate-600 text-sm">
+                <p class="text-slate-600 text-sm card-text">
                     Automatically clean, standardize, and prepare your data for analysis and reporting. Turn your business data into clear, actionable insights that drive growth, improve operations, and inform smarter decisions.
                 </p>
                 <a href="solutions/services.html" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
@@ -533,12 +599,14 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
-                <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mb-4 feature-icon">
-                    <i class="fas fa-brain text-xl"></i>
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 feature-icon">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Unified Data & Systems</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Unified Data & Systems</h3>
-                <p class="text-slate-600 text-sm">
+                <p class="text-slate-600 text-sm card-text">
                     Create seamless operational flow. We integrate your key business systems and break down data silos, fostering a unified environment for improved efficiency and clearer insights.
                 </p>
                 <a href="solutions/services.html" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
@@ -546,12 +614,14 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card">
-                <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mb-4 feature-icon">
-                    <i class="fas fa-robot text-xl"></i>
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 feature-icon">
+                        <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Custom AI Solutions</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Custom AI Solutions</h3>
-                <p class="text-slate-600 text-sm">
+                <p class="text-slate-600 text-sm card-text">
                     Get intelligent AI built specifically for your unique business needs – from private data assistants to specialized problem-solving tools.
                 </p>
                 <a href="solutions/services.html" class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
@@ -576,89 +646,77 @@
             </p>
         </div>
         
-        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl border border-indigo-100 card-hover fade-in">
-                <div class="flex items-start">
-                    <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 card-grid">
+            <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl border border-indigo-100 card-hover fade-in card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 feature-icon">
                         <i class="fas fa-coins text-xl"></i>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Finance & Accounting</h3>
-                        <p class="text-slate-600 text-sm">
-                            Enhance accuracy and efficiency by automating critical financial processes: from invoices and reconciliations to compliance and reporting.
-                        </p>
-                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Finance & Accounting</h3>
                 </div>
+                <p class="text-slate-600 text-sm card-text">
+                    Enhance accuracy and efficiency by automating critical financial processes: from invoices and reconciliations to compliance and reporting.
+                </p>
             </div>
             
-            <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 card-hover fade-in">
-                <div class="flex items-start">
-                    <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
+            <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 card-hover fade-in card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 feature-icon">
                         <i class="fas fa-shopping-cart text-xl"></i>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">E-commerce</h3>
-                        <p class="text-slate-600 text-sm">
-                            Automate product listings, dynamic pricing, inventory management, and key customer engagement workflows.
-                        </p>
-                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">E-commerce</h3>
                 </div>
+                <p class="text-slate-600 text-sm card-text">
+                    Automate product listings, dynamic pricing, inventory management, and key customer engagement workflows.
+                </p>
             </div>
             
-            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 card-hover fade-in">
-                <div class="flex items-start">
-                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 card-hover fade-in card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 feature-icon">
                         <i class="fas fa-heartbeat text-xl"></i>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Healthcare</h3>
-                        <p class="text-slate-600 text-sm">
-                            Digitize patient forms, automate essential communications, and streamline back-office workflows, securely and efficiently.
-                        </p>
-                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Healthcare</h3>
                 </div>
+                <p class="text-slate-600 text-sm card-text">
+                    Digitize patient forms, automate essential communications, and streamline back-office workflows, securely and efficiently.
+                </p>
             </div>
             
-            <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 card-hover fade-in">
-                <div class="flex items-start">
-                    <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mr-4">
+            <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 card-hover fade-in card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 feature-icon">
                         <i class="fas fa-home text-xl"></i>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Real Estate</h3>
-                        <p class="text-slate-600 text-sm">
-                            Automate lease administration, streamline critical property data workflows, and enhance tenant communications.
-                        </p>
-                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Real Estate</h3>
                 </div>
+                <p class="text-slate-600 text-sm card-text">
+                    Automate lease administration, streamline critical property data workflows, and enhance tenant communications.
+                </p>
             </div>
             
-            <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-xl border border-yellow-100 card-hover fade-in">
-                <div class="flex items-start">
-                    <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4">
+            <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-xl border border-yellow-100 card-hover fade-in card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 feature-icon">
                         <i class="fas fa-users text-xl"></i>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">HR & Recruitment</h3>
-                        <p class="text-slate-600 text-sm">
-                            Automate resume screening, simplify employee onboarding, and efficiently manage HR inquiries and core administrative processes.
-                        </p>
-                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">HR & Recruitment</h3>
                 </div>
+                <p class="text-slate-600 text-sm card-text">
+                    Automate resume screening, simplify employee onboarding, and efficiently manage HR inquiries and core administrative processes.
+                </p>
             </div>
             
-            <div class="bg-gradient-to-br from-red-50 to-white p-6 rounded-xl border border-red-100 card-hover fade-in">
-                <div class="flex items-start">
-                    <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mr-4">
+            <div class="bg-gradient-to-br from-red-50 to-white p-6 rounded-xl border border-red-100 card-hover fade-in card-full">
+                <div class="card-header">
+                    <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 feature-icon">
                         <i class="fas fa-bullhorn text-xl"></i>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Marketing Agencies</h3>
-                        <p class="text-slate-600 text-sm">
-                            Automate client reporting, leverage AI-assisted content creation, and streamline campaign management for greater impact.
-                        </p>
-                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Marketing Agencies</h3>
                 </div>
+                <p class="text-slate-600 text-sm card-text">
+                    Automate client reporting, leverage AI-assisted content creation, and streamline campaign management for greater impact.
+                </p>
             </div>
         </div>
         
@@ -673,7 +731,7 @@
         <div class="max-w-4xl mx-auto text-center mb-16">
             <span class="inline-block px-3 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full mb-4">OUR PROCESS</span>
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Simple, Transparent Process</h2>
-            <p class="text-lg text-slate-600">
+            <p class="text-lg text-slate-600 process-text">
                 From discovery to deployment, we make automation accessible
             </p>
         </div>
@@ -683,13 +741,13 @@
                 <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -translate-y-1/2"></div>
                 <div class="hidden md:block absolute top-1/2 left-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 -translate-y-1/2 progress-line" style="width: 0%"></div>
                 
-                <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                <div class="grid md:grid-cols-4 gap-8 relative z-10 process-grid">
                     <div class="text-center fade-in">
                         <div class="w-20 h-20 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-6 shadow-sm step-icon">
                             <span class="text-2xl font-bold">1</span>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">Discovery</h3>
-                        <p class="text-slate-600 text-sm">
+                        <p class="text-slate-600 text-sm process-text">
                             We analyze your processes to identify automation opportunities.
                         </p>
                     </div>
@@ -699,7 +757,7 @@
                             <span class="text-2xl font-bold">2</span>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">Prototype</h3>
-                        <p class="text-slate-600 text-sm">
+                        <p class="text-slate-600 text-sm process-text">
                             We build a testable version to validate the solution approach.
                         </p>
                     </div>
@@ -709,7 +767,7 @@
                             <span class="text-2xl font-bold">3</span>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">Delivery</h3>
-                        <p class="text-slate-600 text-sm">
+                        <p class="text-slate-600 text-sm process-text">
                             We implement the solution and train your team on usage.
                         </p>
                     </div>
@@ -719,7 +777,7 @@
                             <span class="text-2xl font-bold">4</span>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 mb-2">Optimize</h3>
-                        <p class="text-slate-600 text-sm">
+                        <p class="text-slate-600 text-sm process-text">
                             We monitor performance and make continuous improvements.
                         </p>
                     </div>
@@ -744,10 +802,10 @@
             </p>
         </div>
         
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 card-grid">
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card card-full">
                 <div class="text-5xl font-bold text-indigo-600 mb-4">90%</div>
-                <p class="text-slate-600 mb-6">
+                <p class="text-slate-600 mb-6 card-text">
                     "Reduced invoice processing time by 90%, saving our accounting team 25 hours weekly."
                 </p>
                 <div class="flex items-center">
@@ -761,9 +819,9 @@
                 </div>
             </div>
             
-            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card card-full">
                 <div class="text-5xl font-bold text-purple-600 mb-4">40h</div>
-                <p class="text-slate-600 mb-6">
+                <p class="text-slate-600 mb-6 card-text">
                     "Recovered 40 hours/month in admin work, allowing our agents to focus on clients."
                 </p>
                 <div class="flex items-center">
@@ -777,9 +835,9 @@
                 </div>
             </div>
             
-            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card">
+            <div class="bg-slate-50 p-8 rounded-xl card-hover fade-in testimonial-card card-full">
                 <div class="text-5xl font-bold text-blue-600 mb-4">3d</div>
-                <p class="text-slate-600 mb-6">
+                <p class="text-slate-600 mb-6 card-text">
                     "Deployed a custom AI agent in 3 days that now handles 80% of customer inquiries."
                 </p>
                 <div class="flex items-center">
@@ -804,15 +862,15 @@
             </p>
         </div>
         
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
-                <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center text-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 card-grid">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card card-full">
+                <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center text-white blog-image">
                     <i class="fas fa-robot text-6xl opacity-20"></i>
                 </div>
                 <div class="p-6">
                     <div class="text-xs font-semibold text-indigo-600 mb-2">AUTOMATION</div>
                     <h3 class="text-lg font-bold text-slate-900 mb-3">5 Processes to Automate First</h3>
-                    <p class="text-slate-600 text-sm mb-4">
+                    <p class="text-slate-600 text-sm mb-4 card-text">
                         Discover which business processes deliver the quickest ROI when automated.
                     </p>
                     <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
@@ -821,14 +879,14 @@
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
-                <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card card-full">
+                <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white blog-image">
                     <i class="fas fa-brain text-6xl opacity-20"></i>
                 </div>
                 <div class="p-6">
                     <div class="text-xs font-semibold text-blue-600 mb-2">AI TRENDS</div>
                     <h3 class="text-lg font-bold text-slate-900 mb-3">Small Business AI Strategies</h3>
-                    <p class="text-slate-600 text-sm mb-4">
+                    <p class="text-slate-600 text-sm mb-4 card-text">
                         Affordable AI solutions that can transform operations without enterprise budgets.
                     </p>
                     <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
@@ -837,14 +895,14 @@
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card">
-                <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center text-white">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-in blog-card card-full">
+                <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center text-white blog-image">
                     <i class="fas fa-database text-6xl opacity-20"></i>
                 </div>
                 <div class="p-6">
                     <div class="text-xs font-semibold text-purple-600 mb-2">DATA TRANSFORMATION</div>
                     <h3 class="text-lg font-bold text-slate-900 mb-3">From Data to Decisions</h3>
-                    <p class="text-slate-600 text-sm mb-4">
+                    <p class="text-slate-600 text-sm mb-4 card-text">
                         Practical steps to clean, organize and extract insights from your business data.
                     </p>
                     <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm flex items-center">
@@ -883,7 +941,7 @@
         </div>
     </section>
 
-    <section class="py-20 px-6 lg:px-16 gradient-bg text-white">
+    <section class="py-20 px-6 lg:px-16 gradient-bg text-white cta-text">
         <div class="max-w-4xl mx-auto text-center relative">
             <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-white/10 blur-2xl"></div>
             <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-purple-500/20 blur-2xl"></div>
@@ -901,13 +959,13 @@
 
     <footer class="bg-slate-900 text-slate-300 py-16 px-6 lg:px-16">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12">
+            <div class="grid md:grid-cols-4 gap-12 footer-grid">
                 <div>
                     <div class="flex items-center mb-6">
                         <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
                         <span class="text-xl font-bold text-white">AutomateIQ</span>
                     </div>
-                    <p class="mb-6 text-slate-400">
+                    <p class="mb-6 text-slate-400 footer-text">
                         AI-driven automation solutions that help businesses work smarter, not harder.
                     </p>
                     <div class="flex space-x-4">
@@ -994,7 +1052,6 @@
         const floatingCTA = document.getElementById('floatingCTA');
        
         floatingCTA.addEventListener('click', () => {
-            // Scroll to contact section or open modal
             window.scrollTo({
                 top: document.body.scrollHeight,
                 behavior: 'smooth'
@@ -1054,7 +1111,7 @@
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80, 
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
                         
