@@ -247,23 +247,46 @@
             /* Card Sections */
             .card-text { display: none; }
             .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .feature-icon { 
-                width: 32px; 
-                height: 32px; 
-                font-size: 1rem;
-                margin-right: 0.5rem;
-            }
-            .card-header { 
-                display: flex; 
-                align-items: center; 
-                justify-content: center;
-            }
+            .feature-icon { display: none; }
+            .card-header .w-12, .card-header .w-16 { display: none; } /* Hide icon containers */
             .card-header h3 { 
                 font-size: 1rem; 
-                margin-bottom: 0;
-                text-align: left;
+                text-align: center;
             }
-            .card-full { padding: 1rem; }
+            .card-full { 
+                padding: 1rem; 
+                position: relative;
+                overflow: hidden;
+            }
+            /* New icon container for mobile */
+            .mobile-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 60px;
+                margin-bottom: 0.5rem;
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                font-size: 2.5rem;
+                opacity: 0.3;
+                z-index: 0;
+            }
+            .benefit-card-1 .mobile-icon { color: #6366f1; }
+            .benefit-card-2 .mobile-icon { color: #a855f7; }
+            .benefit-card-3 .mobile-icon { color: #3b82f6; }
+            .service-card-1 .mobile-icon { color: #6366f1; }
+            .service-card-2 .mobile-icon { color: #a855f7; }
+            .service-card-3 .mobile-icon { color: #3b82f6; }
+            .service-card-4 .mobile-icon { color: #10b981; }
+            .service-card-5 .mobile-icon { color: #eab308; }
+            .service-card-6 .mobile-icon { color: #ef4444; }
+            .industry-card-1 .mobile-icon { color: #6366f1; }
+            .industry-card-2 .mobile-icon { color: #a855f7; }
+            .industry-card-3 .mobile-icon { color: #3b82f6; }
+            .industry-card-4 .mobile-icon { color: #10b981; }
+            .industry-card-5 .mobile-icon { color: #eab308; }
+            .industry-card-6 .mobile-icon { color: #ef4444; }
+            .card-full * { position: relative; z-index: 1; }
             
             /* Process Section */
             .process-line { display: none; }
@@ -346,11 +369,11 @@
                         <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-1 group-hover:translate-y-0 border border-slate-100 overflow-hidden">
                             <div class="py-1.5">
                                 <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                                    <i class="fas fa-calculator mr-2 text-indigo-500 w-4 text-center"></i>
+                                    <i class="fas fa-calculator mr-2 w-4 text-indigo-500 w-4 text-center"></i>
                                     Accounting & Finance
                                 </a>
                                 <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
-                                    <i class="fas fa-shopping-bag mr-2 text-indigo-500 w-4 text-center"></i>
+                                    <i class="fas fa-shopping-bag mr-2 text-indigo-500 w-4"></i>
                                     E-commerce & Retail
                                 </a>
                                 <a href="industries.html" class="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors border-b border-slate-100 last:border-b-0">
@@ -382,7 +405,7 @@
                     <a href="ro/index-ro.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">RO</a>
                 </div>
                 
-                <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
+                <button class="relative overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white bg-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow hover:shadow-md font-medium">
                     <span class="relative z-10">Free Consultation</span>
                     <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </button>
@@ -491,7 +514,8 @@
         </div>
         
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 card-grid">
-            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full">
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full benefit-card-1">
+                <div class="mobile-icon"><i class="fas fa-tasks"></i></div>
                 <div class="card-header">
                     <div class="w-16 h-16 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 feature-icon">
                         <i class="fas fa-tasks text-2xl"></i>
@@ -503,7 +527,8 @@
                 </p>
             </div>
             
-            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full">
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full benefit-card-2">
+                <div class="mobile-icon"><i class="fas fa-clock"></i></div>
                 <div class="card-header">
                     <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 feature-icon">
                         <i class="fas fa-clock text-2xl"></i>
@@ -515,7 +540,8 @@
                 </p>
             </div>
             
-            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full">
+            <div class="bg-slate-50 p-8 rounded-2xl card-hover fade-in border border-slate-100 card-full benefit-card-3">
+                <div class="mobile-icon"><i class="fas fa-chart-bar"></i></div>
                 <div class="card-header">
                     <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 feature-icon">
                         <i class="fas fa-chart-bar text-2xl"></i>
@@ -539,7 +565,8 @@
         </div>
         
         <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 card-grid">
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full service-card-1">
+                <div class="mobile-icon"><i class="fas fa-envelope"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 feature-icon">
                         <i class="fas fa-envelope text-xl"></i>
@@ -554,7 +581,8 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full service-card-2">
+                <div class="mobile-icon"><i class="fas fa-file-invoice-dollar"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 feature-icon">
                         <i class="fas fa-file-invoice-dollar text-xl"></i>
@@ -569,7 +597,8 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full service-card-3">
+                <div class="mobile-icon"><i class="fas fa-newspaper"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 feature-icon">
                         <i class="fas fa-newspaper text-xl"></i>
@@ -584,7 +613,8 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full service-card-4">
+                <div class="mobile-icon"><i class="fas fa-database"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 feature-icon">
                         <i class="fas fa-database text-xl"></i>
@@ -599,7 +629,8 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full service-card-5">
+                <div class="mobile-icon"><i class="fas fa-brain"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 feature-icon">
                         <i class="fas fa-brain text-xl"></i>
@@ -614,7 +645,8 @@
                 </a>
             </div>
             
-            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full">
+            <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in border border-slate-100 feature-card card-full service-card-6">
+                <div class="mobile-icon"><i class="fas fa-robot"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 feature-icon">
                         <i class="fas fa-robot text-xl"></i>
@@ -647,7 +679,8 @@
         </div>
         
         <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 card-grid">
-            <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl border border-indigo-100 card-hover fade-in card-full">
+            <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl border border-indigo-100 card-hover fade-in card-full industry-card-1">
+                <div class="mobile-icon"><i class="fas fa-coins"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 feature-icon">
                         <i class="fas fa-coins text-xl"></i>
@@ -659,7 +692,8 @@
                 </p>
             </div>
             
-            <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 card-hover fade-in card-full">
+            <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 card-hover fade-in card-full industry-card-2">
+                <div class="mobile-icon"><i class="fas fa-shopping-cart"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 feature-icon">
                         <i class="fas fa-shopping-cart text-xl"></i>
@@ -671,7 +705,8 @@
                 </p>
             </div>
             
-            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 card-hover fade-in card-full">
+            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 card-hover fade-in card-full industry-card-3">
+                <div class="mobile-icon"><i class="fas fa-heartbeat"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 feature-icon">
                         <i class="fas fa-heartbeat text-xl"></i>
@@ -683,7 +718,8 @@
                 </p>
             </div>
             
-            <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 card-hover fade-in card-full">
+            <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 card-hover fade-in card-full industry-card-4">
+                <div class="mobile-icon"><i class="fas fa-home"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 feature-icon">
                         <i class="fas fa-home text-xl"></i>
@@ -695,7 +731,8 @@
                 </p>
             </div>
             
-            <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-xl border border-yellow-100 card-hover fade-in card-full">
+            <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-xl border border-yellow-100 card-hover fade-in card-full industry-card-5">
+                <div class="mobile-icon"><i class="fas fa-users"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 feature-icon">
                         <i class="fas fa-users text-xl"></i>
@@ -707,7 +744,8 @@
                 </p>
             </div>
             
-            <div class="bg-gradient-to-br from-red-50 to-white p-6 rounded-xl border border-red-100 card-hover fade-in card-full">
+            <div class="bg-gradient-to-br from-red-50 to-white p-6 rounded-xl border border-red-100 card-hover fade-in card-full industry-card-6">
+                <div class="mobile-icon"><i class="fas fa-bullhorn"></i></div>
                 <div class="card-header">
                     <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 feature-icon">
                         <i class="fas fa-bullhorn text-xl"></i>
@@ -1081,7 +1119,7 @@
                     const scrollPercent = Math.max(0, Math.min(1, (windowHeight - processSectionTop) / (windowHeight + processSectionHeight)));
                     const progressLine = document.querySelector('.progress-line');
                     if (progressLine) {
-                       progressLine.style.width = `${scrollPercent * 100}%`;
+                        progressLine.style.width = `${scrollPercent * 100}%`;
                     }
                    
                     const steps = document.querySelectorAll('.step-icon');
