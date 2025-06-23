@@ -86,29 +86,71 @@
         .gradient-bg {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
         }
-        .dropdown-menu {
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
+        footer a {
+            position: relative;
         }
-        .group:hover .dropdown-menu,
-        .dropdown-menu:hover {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto;
-            transition-delay: 0s;
-        }
-        .dropdown-menu:before {
+        footer a:after {
             content: '';
             position: absolute;
-            bottom: 100%;
-            left: 20px;
-            border-width: 8px;
-            border-style: solid;
-            border-color: transparent transparent white transparent;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        footer a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+        /* Mobile-specific styles */
+        @media (max-width: 640px) {
+            .mobile-hidden-text {
+                display: none;
+            }
+            .mobile-hidden-text.active {
+                display: block;
+            }
+            .see-more-btn {
+                display: inline-flex;
+                align-items: center;
+                color: #6366f1;
+                font-medium;
+                cursor: pointer;
+                margin-top: 1rem;
+            }
+            .see-more-btn i {
+                margin-left: 0.5rem;
+                transition: transform 0.3s ease;
+            }
+            .see-more-btn.active i {
+                transform: rotate(180deg);
+            }
+            .solution-card {
+                padding: 1.5rem;
+            }
+            .solution-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+            .solution-card h3 {
+                font-size: 1.25rem;
+                text-align: center;
+            }
+            .hero-gradient h1 {
+                font-size: 2rem;
+            }
+            .pt-16 { padding-top: 4rem; }
+            .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
+            .mb-12 { margin-bottom: 1.5rem; }
+            .gap-8 { gap: 1rem; }
+            .footer-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .footer-text {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -146,16 +188,16 @@
         <div id="mobileMenu" class="hidden md:hidden bg-white absolute top-full left-0 right-0 shadow-lg py-4 px-6">
             <a href="#" class="block py-3 text-indigo-600 font-medium border-b border-slate-100">Soluții</a>
             <a href="industrii.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Industrii</a>
-            <a href=".ro-blog.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Blog</a>
+            <a href="ro-blog.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Blog</a>
             <a href="despre-noi.html" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Despre</a>
-            <a href="#" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Cariere</a>
+            <a href="../index-ro.html#careers" class="block py-3 text-slate-600 hover:text-indigo-600 font-medium border-b border-slate-100">Cariere</a>
             <div class="pt-4 pb-2">
                 <div class="flex items-center border border-slate-200 rounded-lg p-1 space-x-1 w-min">
-                    <a href="services.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">EN</a>
+                    <a href="../solutions/services.html" class="px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 transition-colors">EN</a>
                     <span class="px-3 py-1.5 text-sm font-medium text-white gradient-bg rounded-md cursor-default">RO</span>
                 </div>
             </div>
-             <button class="mt-4 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3 rounded-lg transition shadow hover:shadow-md font-medium">
+            <button class="mt-4 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3 rounded-lg transition shadow hover:shadow-md font-medium">
                 Consultanță Gratuită
             </button>
         </div>
@@ -170,9 +212,12 @@
                     <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
                         Soluțiile Noastre: Proiectate pentru Succesul Dvs.
                     </h1>
-                    <p class="mt-6 max-w-2xl mx-auto text-xl">
+                    <p class="mt-6 max-w-2xl mx-auto text-xl mobile-hidden-text" data-toggle-id="hero-text">
                         În peisajul de afaceri dinamic de astăzi, utilizarea tehnologiei potrivite nu este doar un avantaj—este fundamentală pentru creșterea și avantajul dvs. competitiv.
                     </p>
+                    <div class="mt-6 text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="hero-text">
+                        Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="mt-10">
                         <a href="#solutions" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-gray-50 transition duration-150 ease-in-out">
                             Explorați Soluțiile <i class="fas fa-arrow-down ml-2"></i>
@@ -194,88 +239,128 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Soluția 1 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-blue-100 text-blue-600"><i class="fas fa-project-diagram text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Transformare Strategică a Proceselor</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Reimaginați-vă operațiunile pentru performanță maximă prin analiza și reproiectarea completă a proceselor. Identificăm ineficiențe și oportunități de automatizare, optimizând colaborarea om-mașină.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-1-text">
+                                    Reimaginați-vă operațiunile pentru performanță maximă prin analiza și reproiectarea completă a proceselor. Identificăm ineficiențe și oportunități de automatizare, optimizând colaborarea om-mașină.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-1-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Soluția 2 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-slate-100 text-slate-600"><i class="fas fa-cogs text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Automatizarea Proceselor</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Elevați-vă operațiunile cu execuție inteligentă. Automatizăm fluxuri de lucru esențiale, de la sarcini zilnice la procese complexe, reducând ineficiențele și permițând echipei dvs. să obțină mai mult.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-2-text">
+                                    Elevați-vă operațiunile cu execuție inteligentă. Automatizăm fluxuri de lucru esențiale, de la sarcini zilnice la procese complexe, reducând ineficiențele și permițând echipei dvs. să obțină mai mult.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-2-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Soluția 3 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-teal-50 text-teal-500"><i class="fas fa-file-alt text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Procesare Inteligentă a Documentelor</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Depășiți haosul documentelor și deblocați date valoroase. Soluțiile noastre IDP extrag, clasifică și validează automat informații din orice document, transformând fișierele în active acționabile.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-3-text">
+                                    Depășiți haosul documentelor și deblocați date valoroase. Soluțiile noastre IDP extrag, clasifică și validează automat informații din orice document, transformând fișierele în active acționabile.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-3-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Soluția 4 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-yellow-100 text-yellow-600"><i class="fas fa-chart-line text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Analiză și Inteligența Datelor</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Transformați datele într-un avantaj clar cu perspective inteligibile și acționabile. Soluțiile noastre transformă datele brute în active strategice care conduc la decizii mai bune.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-4-text">
+                                    Transformați datele într-un avantaj clar cu perspective inteligibile și acționabile. Soluțiile noastre transformă datele brute în active strategice care conduc la decizii mai bune.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-4-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Soluția 5 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-blue-50 text-blue-500"><i class="fas fa-link text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Date și Sisteme Unificate</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Creați un flux operațional fluid prin integrarea sistemelor cheie. Soluțiile noastre elimină silozurile de date și permit partajarea informațiilor în timp real în întreaga organizație.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-5-text">
+                                    Creați un flux operațional fluid prin integrarea sistemelor cheie. Soluțiile noastre elimină silozurile de date și permit partajarea informațiilor în timp real în întreaga organizație.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-5-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Soluția 6 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-indigo-100 text-indigo-600"><i class="fas fa-shopping-cart text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Operațiuni E-commerce Automatizate</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Optimizați-vă performanța e-commerce cu gestiune automată a stocurilor, prețurilor și comenzilor. Soluțiile noastre vă ajută să scalați operațiunile eficient, oferind experiențe excepționale clienților.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-6-text">
+                                    Optimizați-vă performanța e-commerce cu gestiune automată a stocurilor, prețurilor și comenzilor. Soluțiile noastre vă ajută să scalați operațiunile eficient, oferind experiențe excepționale clienților.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-6-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Soluția 7 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-emerald-50 text-emerald-500"><i class="fas fa-pen-fancy text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scalează Conținutul cu AI</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Extindeți impactul conținutului cu planificare, creare și distribuție inteligentă. Soluțiile noastre de conținut bazate pe AI vă ajută să angajați publicul mai eficient, optimizând resursele.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-7-text">
+                                    Extindeți impactul conținutului cu planificare, creare și distribuție inteligentă. Soluțiile noastre de conținut bazate pe AI vă ajută să angajați publicul mai eficient, optimizând resursele.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-7-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Soluția 8 -->
                     <div class="solution-card p-10">
-                        <div class="flex items-start">
+                        <div class="flex items-start flex-col md:flex-row">
                             <div class="solution-icon bg-teal-100 text-teal-600"><i class="fas fa-brain text-3xl"></i></div>
-                            <div class="ml-6 flex-1">
+                            <div class="ml-0 md:ml-6 flex-1 text-center md:text-left">
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Soluții AI Personalizate</h3>
-                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">Obțineți un avantaj strategic cu soluții AI personalizate pentru provocările dvs. specifice. Dezvoltăm modele și aplicații AI personalizate care răspund nevoilor și oportunităților unice ale afacerii dvs.</p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed mobile-hidden-text" data-toggle-id="solution-8-text">
+                                    Obțineți un avantaj strategic cu soluții AI personalizate pentru provocările dvs. specifice. Dezvoltăm modele și aplicații AI personalizate care răspund nevoilor și oportunităților unice ale afacerii dvs.
+                                </p>
+                                <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden" data-toggle-target="solution-8-text">
+                                    Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -284,12 +369,16 @@
         </div>
     </main>
     
-     <div class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <!-- CTA Section -->
+    <div class="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Sunteți Gata să Vă Transformați Afacerea?</h2>
-            <p class="text-xl text-gray-600 mb-8">
+            <p class="text-xl text-gray-600 mb-8 mobile-hidden-text" data-toggle-id="cta-text">
                 Tehnologia potrivită, aplicată cu experiență, poate redefinea ce este posibil pentru afacerea dvs. Să discutăm provocările dvs. și să explorăm cum soluțiile noastre de automatizare și AI vă pot ajuta să atingeți succesul.
             </p>
+            <div class="text-indigo-600 hover:text-indigo-800 font-medium cursor-pointer see-more-btn md:hidden mb-6" data-toggle-target="cta-text">
+                Vezi Mai Mult <i class="fas fa-chevron-down"></i>
+            </div>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out">
                     Programați o Consultanță <i class="fas fa-calendar-alt ml-2"></i>
@@ -303,13 +392,13 @@
 
     <footer class="bg-slate-900 text-slate-300 py-16 px-6 lg:px-16">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12">
+            <div class="grid md:grid-cols-4 gap-12 footer-grid">
                 <div>
                     <div class="flex items-center mb-6">
                         <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">AIQ</div>
                         <span class="text-xl font-bold text-white">AutomateIQ</span>
                     </div>
-                    <p class="mb-6 text-slate-400">
+                    <p class="mb-6 text-slate-400 footer-text">
                         Soluții de automatizare bazate pe AI care ajută afacerile să lucreze mai inteligent.
                     </p>
                     <div class="flex space-x-4">
@@ -336,7 +425,7 @@
                         <li><a href="#" class="hover:text-white transition text-slate-400">Contact</a></li>
                     </ul>
                 </div>
-                 <div>
+                <div>
                     <h4 class="text-white font-bold text-lg mb-6">Resurse</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="hover:text-white transition text-slate-400">Documentație</a></li>
@@ -358,7 +447,7 @@
     <script>
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
-       
+        
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -370,6 +459,23 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        // Toggle text visibility for mobile
+        document.querySelectorAll('.see-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-toggle-target');
+                const targetText = document.querySelector(`[data-toggle-id="${targetId}"]`);
+                const isActive = button.classList.contains('active');
+
+                if (targetText) {
+                    targetText.classList.toggle('active', !isActive);
+                    button.classList.toggle('active', !isActive);
+                    button.innerHTML = isActive 
+                        ? 'Vezi Mai Mult <i class="fas fa-chevron-down"></i>'
+                        : 'Vezi Mai Puțin <i class="fas fa-chevron-up"></i>';
+                }
+            });
         });
     </script>
 </body>
